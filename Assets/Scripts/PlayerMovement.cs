@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         verticalRotation -= verticalMovementRotation;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
         Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+     
 
         // Control de velocidad de movimiento
         if (Input.GetKey(KeyCode.LeftShift))
