@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Variables públicas para controlar la velocidad de movimiento y la sensibilidad del ratón
+    // Variables publicas para controlar la velocidad de movimiento y la sensibilidad del raton
     [Header("Velocidad Mouse")]
     [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float mouseSensitivity = 100f;
+    [SerializeField] float mouseSensitivity = 50f;
 
-    // Variables privadas para controlar la rotación vertical del jugador y la velocidad de movimiento actual
+    [SerializeField] Transform orientation;
+
+
+    // Variables privadas para controlar la rotacion vertical del jugador y la velocidad de movimiento actual
     private float verticalRotation = 0f;
     private float currentMoveSpeed = 0f;
 
@@ -25,10 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // Bloquea y oculta el cursor del ratón para que no se salga de la pantalla
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         // Establece la velocidad de movimiento actual en la velocidad de movimiento inicial
         currentMoveSpeed = moveSpeed;
 
@@ -36,21 +35,21 @@ public class PlayerMovement : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Método Update que se ejecuta cada frame del juego
+    // Mï¿½todo Update que se ejecuta cada frame del juego
     void Update()
     {
         // Control de movimiento
         float horizontalMovement = Input.GetAxis("Horizontal");
         float verticalMovement = Input.GetAxis("Vertical");
-        Vector3 movement = transform.right * horizontalMovement + transform.forward * verticalMovement;
+        Vector3 movement = orientation.right * horizontalMovement + orientation.forward * verticalMovement;
         movement.Normalize();
         transform.position += movement * currentMoveSpeed * Time.deltaTime;
 
-        // Control de rotación horizontal
+        // Control de rotaciï¿½n horizontal
         float horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         transform.Rotate(Vector3.up, horizontalRotation);
 
-        // Control de rotación vertical
+        // Control de rotaciï¿½n vertical
         float verticalMovementRotation = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         verticalRotation -= verticalMovementRotation;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
@@ -90,4 +89,26 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+
+//     [SerializeField]
+//     private GameObject player, referencia;
+//     private Vector3 distancia;
+// 	// Use this for initialization
+// 	void Start () {
+//         distancia = transform.position - player.transform.position;
+// 	}
+	
+// 	// Update is called once per frame
+// 	void LateUpdate () {
+//         distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse X")*2,Vector3.up)*distancia;
+
+//         transform.position = player.transform.position + distancia;
+//         transform.LookAt(player.transform.position);
+
+//         Vector3 copRot = new Vector3(0,transform.eulerAngles.y,0);
+//         referencia.transform.eulerAngles = copRot;
+// 	}
+// }
+
 }

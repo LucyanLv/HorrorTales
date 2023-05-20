@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CamHolder : MonoBehaviour
 {
-    public Transform camPos;
+    [SerializeField] Transform camPos;
+    [SerializeField] Transform playerVisionCenter;
     void Start()
     {
         
@@ -14,5 +15,6 @@ public class CamHolder : MonoBehaviour
     void Update()
     {
         transform.position = camPos.position;
+        transform.LookAt(playerVisionCenter);
     }
 }
