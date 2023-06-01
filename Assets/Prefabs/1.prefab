@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5254258627701330398}
   - component: {fileID: 184791947127184907}
   - component: {fileID: 2821825778722169876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5254258627701330396
 MeshFilter:
