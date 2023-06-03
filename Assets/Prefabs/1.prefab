@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5254258627701330396}
   - component: {fileID: 5254258627701330399}
   - component: {fileID: 5254258627701330398}
-  - component: {fileID: 184791947127184907}
   - component: {fileID: 2821825778722169876}
+  - component: {fileID: 184791947127184907}
   m_Layer: 3
   m_Name: 1
   m_TagString: Collectable
@@ -107,6 +107,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2821825778722169876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254258627701330384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156f54275ce818641b4c320917f1107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: V
 --- !u!114 &184791947127184907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,15 +133,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
---- !u!114 &2821825778722169876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5254258627701330384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 156f54275ce818641b4c320917f1107f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
