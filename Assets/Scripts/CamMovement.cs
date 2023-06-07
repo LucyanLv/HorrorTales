@@ -10,14 +10,21 @@ public class CamMovement : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    void Start()
+    [SerializeField] Transform camPos;
+    [SerializeField] Transform playerVisionCenter;
+
+    // Update is called once per frame
+    void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        transform.position = camPos.position;
+        transform.LookAt(playerVisionCenter);
+                // Cursor.lockState = CursorLockMode.Locked;
+        //    Cursor.visible = false;
     }
 
     // Update is called once per frame
-     void LateUpdate() {
+    void LateUpdate()
+    {
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
         yRotation += mouseX;
@@ -35,7 +42,7 @@ public class CamMovement : MonoBehaviour
 // 	void Start () {
 //         distancia = transform.position - player.transform.position;
 // 	}
-	
+
 // 	// Update is called once per frame
 // 	void LateUpdate () {
 //         distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse X")*2,Vector3.up)*distancia;

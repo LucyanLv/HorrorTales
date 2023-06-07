@@ -12,5 +12,7 @@ public class PicPart : MonoBehaviour
     {
         Debug.Log($"111_{Id}");
         GameObject.Find($"111_{Id}").GetComponent<SpriteRenderer>().enabled = true;
+        Debug.Log($"111_{Id} mostrarse {GameObject.Find($"111_{Id}").GetComponent<SpriteRenderer>().enabled}");
+
     }
 }

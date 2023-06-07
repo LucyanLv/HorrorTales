@@ -11,10 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Transform orientation;
 
-    [SerializeField] Camera camera;
-
-
-
     // Variables privadas para controlar la rotacion vertical del jugador y la velocidad de movimiento actual
     private float verticalRotation = 0f;
     private float currentMoveSpeed = 0f;
@@ -56,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         float verticalMovementRotation = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         verticalRotation -= verticalMovementRotation;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
-        camera.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+   //     Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
      
 
         // Control de velocidad de movimiento
