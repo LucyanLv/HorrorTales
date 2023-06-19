@@ -13,7 +13,12 @@ public class FieldOfView : MonoBehaviour
         visionCollider = GetComponent<SphereCollider>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectable"))
         {
@@ -38,7 +43,7 @@ public class FieldOfView : MonoBehaviour
                 //         TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
                 //     }
                 // }
-                Bounds item = (other.gameObject.GetComponent<Renderer>().bounds);
+                Bounds item = GetBoundsWithMargin(other.gameObject.GetComponent<Renderer>().bounds, 0.1f);
 
 
                 if (GeometryUtility.TestPlanesAABB(camFOV, item))
@@ -46,16 +51,17 @@ public class FieldOfView : MonoBehaviour
                     Debug.Log($"LO VEO LO VEOOOOO");
                     camFOV = GeometryUtility.CalculateFrustumPlanes(Camera.main);
 
-                    if (IsElementVisible(other.gameObject.transform, 0.1f))
+                    if (IsElementVisible(other.gameObject, 0.1f))
                     {
+                        Debug.Log("element visible in camera");
                         Vector2 position = Camera.main.WorldToScreenPoint(other.gameObject.transform.position);
-                         Debug.Log($"{position} - uwu los game objects desde el script de fiel of view     /////////////////  ");
+                         //Debug.Log($"{position} - uwu los game objects desde el script de fiel of view     /////////////////  ");
                          TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
                     }
                     else
                     {
-                        // El elemento está fuera del campo de visión de la cámara
-                        // Realiza las acciones necesarias aquí
+                        TooltipManager.Instance.hideToolTip();
+
                     }
                 }
             }
@@ -63,9 +69,10 @@ public class FieldOfView : MonoBehaviour
     }
 
 
-    private bool IsElementVisible(Transform elemento, float margen)
+    private bool IsElementVisible(GameObject elemento, float margen)
     {
         Renderer renderer = elemento.GetComponent<Renderer>();
+        Debug.Log($"entro a validar visible");
 
         if (renderer != null)
         {
@@ -75,7 +82,7 @@ public class FieldOfView : MonoBehaviour
         }
 
         // Si el elemento no tiene un Renderer, verifica si algún punto del Transform está dentro del frustum
-        return GeometryUtility.TestPlanesAABB(camFOV, new Bounds(elemento.position, Vector3.zero));
+        return GeometryUtility.TestPlanesAABB(camFOV, new Bounds(elemento.transform.position, Vector3.zero));
     }
 
     private Bounds GetBoundsWithMargin(Bounds bounds, float margin)
