@@ -25,13 +25,14 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-    //    List<RaycastResult> raycastResultList = new List<RaycastResult>();
-    //     EventSystem.current.RaycastAll(eventData, raycastResultList);
-    //     List<RaycastResult> a = raycastResultList.Where(t => t.gameObject.CompareTag("Collectable")).ToList();
-    //      Transform t = a[0].gameObject.transform;
-    //     Vector2 position = Camera.main.WorldToScreenPoint(t.position); 
-    //     Debug.Log($"{ position } - uwu los game objectsssssssssssssssssssssssssssssssssssssssssss     /////////////////  ");
-    //     TooltipManager.Instance.setAndShowToolTip(message, position + Vector2.up * 60);
+        List<RaycastResult> raycastResultList = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, raycastResultList);
+        List<RaycastResult> a = raycastResultList.Where(t => t.gameObject.CompareTag("Collectable")).ToList();
+        GameObject item = a[0].gameObject;
+        item.GetComponent<AudioSource>().Play();
+        //     Vector2 position = Camera.main.WorldToScreenPoint(t.position); 
+        //     Debug.Log($"{ position } - uwu los game objectsssssssssssssssssssssssssssssssssssssssssss     /////////////////  ");
+        //     TooltipManager.Instance.setAndShowToolTip(message, position + Vector2.up * 60);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
