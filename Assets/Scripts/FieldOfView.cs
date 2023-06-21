@@ -18,10 +18,12 @@ public class FieldOfView : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Collectable"))
+        if (other.CompareTag("Player"))
         {
+            Debug.Log($"he detectado al player");
+
             Vector3 direccion = other.transform.position - transform.position;
             float angulo = Vector3.Angle(direccion, transform.forward);
             // Debug.Log($"{angulo}  / {visionAngle}");
@@ -43,18 +45,18 @@ public class FieldOfView : MonoBehaviour
                 //         TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
                 //     }
                 // }
-                Bounds item = GetBoundsWithMargin(other.gameObject.GetComponent<Renderer>().bounds, 0.1f);
+                Bounds item = GetBoundsWithMargin(GetComponent<Renderer>().bounds, 0.1f);
 
 
                 if (GeometryUtility.TestPlanesAABB(camFOV, item))
                 {
                     Debug.Log($"LO VEO LO VEOOOOO");
-                    camFOV = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+                    camFOV = GeometryUtility.CalculateFrustumPlanes(Camera.current);
 
-                    if (IsElementVisible(other.gameObject, 0.1f))
+                    if (IsElementVisible(this.gameObject, 0.1f))
                     {
                         Debug.Log("element visible in camera");
-                        Vector2 position = Camera.main.WorldToScreenPoint(other.gameObject.transform.position);
+                        Vector2 position = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
                          //Debug.Log($"{position} - uwu los game objects desde el script de fiel of view     /////////////////  ");
                          TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
                     }
