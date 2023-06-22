@@ -14,8 +14,8 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
 
-        Debug.Log($"me han clikeado { GetComponent<PicPart>().Id}");
-        GetComponent<PicPart>().wasClicked();
+        Debug.Log($"me han clikeado { GetComponent<PuzzlePart>().Id}");
+        GetComponent<PuzzlePart>().wasClicked();
     }
 
     public void OnPointerDown(PointerEventData eventData)

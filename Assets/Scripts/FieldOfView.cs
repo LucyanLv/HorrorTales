@@ -12,64 +12,38 @@ public class FieldOfView : MonoBehaviour
     {
         visionCollider = GetComponent<SphereCollider>();
     }
-
-    private void Update()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log($"he detectado al player");
+            Bounds item = GetBoundsWithMargin(GetComponent<Renderer>().bounds, 0.1f);
+            camFOV = GeometryUtility.CalculateFrustumPlanes(Camera.main);
 
-            Vector3 direccion = other.transform.position - transform.position;
-            float angulo = Vector3.Angle(direccion, transform.forward);
-            // Debug.Log($"{angulo}  / {visionAngle}");
-            if (angulo < visionAngle + 0.5f)
+            if (IsElementVisible(gameObject, 0.1f))
             {
-
-                // RaycastHit hit;
-
-                // if (Physics.Raycast(transform.position + transform.up, direccion, out hit, visionCollider.radius))
-                // {
-
-                //     Debug.DrawRay(transform.position + transform.up, direccion, Color.magenta);
-
-                //     if (hit.collider.gameObject.CompareTag("Collectable"))
-                //     {
-                //         itemSeen = true;
-                //         Vector2 position = Camera.main.WorldToScreenPoint(other.gameObject.transform.position);
-                //         Debug.Log($"{position} - uwu los game objects desde el script de fiel of view     /////////////////  ");
-                //         TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
-                //     }
-                // }
-                Bounds item = GetBoundsWithMargin(GetComponent<Renderer>().bounds, 0.1f);
-
-
-                if (GeometryUtility.TestPlanesAABB(camFOV, item))
+                Debug.Log("element visible in camera");
+                Vector2 position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
+              
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log($"LO VEO LO VEOOOOO");
-                    camFOV = GeometryUtility.CalculateFrustumPlanes(Camera.current);
-
-                    if (IsElementVisible(this.gameObject, 0.1f))
-                    {
-                        Debug.Log("element visible in camera");
-                        Vector2 position = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
-                         //Debug.Log($"{position} - uwu los game objects desde el script de fiel of view     /////////////////  ");
-                         TooltipManager.Instance.setAndShowToolTip("V", position + Vector2.up * 60);
-                    }
-                    else
-                    {
-                        TooltipManager.Instance.hideToolTip();
-
-                    }
+                    Debug.Log("vamo a clickear");
+                    GetComponent<PuzzlePart>().wasClicked();
+                    TooltipManager.Instance.hideToolTip();
                 }
+            }
+            else
+            {
+                Debug.Log("element NOT NOT NOT visible in camera");
+                TooltipManager.Instance.hideToolTip();
             }
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        TooltipManager.Instance.hideToolTip();
+    }
 
     private bool IsElementVisible(GameObject elemento, float margen)
     {
@@ -78,6 +52,7 @@ public class FieldOfView : MonoBehaviour
 
         if (renderer != null)
         {
+            Debug.Log($"entro pues el renderer np es null ");
             // Comprueba si algún punto del renderer del elemento está dentro del frustum
             return GeometryUtility.TestPlanesAABB(camFOV, renderer.bounds) ||
                    GeometryUtility.TestPlanesAABB(camFOV, GetBoundsWithMargin(renderer.bounds, margen));
