@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1839947341218841259}
   - component: {fileID: 2207685038976103153}
   - component: {fileID: 236380377180353637}
+  - component: {fileID: 1014255595}
+  - component: {fileID: 1014255594}
   m_Layer: 0
   m_Name: Puerta_LowPoly.009
   m_TagString: Untagged
@@ -104,6 +106,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1014255595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441731735134233216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0728f48ca59b4b2448bd8d56814185a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1014255594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441731735134233216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0074011968, y: 0.02926373, z: 0.01946814}
+  m_Center: {x: 0.002767001, y: 0.0016117886, z: -0.009269628}
 --- !u!1 &7445590573818769860
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,9 +271,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 12.602901, y: 32.179302, z: 4.16141}
-  m_Center: {x: 6.3248653, y: 14.956518, z: 1.0772426}
+  m_Size: {x: 15.908104, y: 32.179302, z: 0.99853945}
+  m_Center: {x: 7.9774666, y: 14.956518, z: -0.024097204}
