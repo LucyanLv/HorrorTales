@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovimientoJugadorVideo : MonoBehaviour
@@ -13,12 +14,18 @@ public class MovimientoJugadorVideo : MonoBehaviour
     bool isMoving;
     bool idle;
 
+    public Vector2 sensitivity;
+
+    [SerializeField] new Transform camera;
+
 
     // Start is called before the first frame update
     void Start()
     {
     rigidbody = GetComponent<Rigidbody>();    
         animator = GetComponent<Animator>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -31,6 +38,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
     private void FixedUpdate()
     {
         movement();
+        MouseControl();
     }
 
     void movement()
@@ -62,8 +70,31 @@ public class MovimientoJugadorVideo : MonoBehaviour
         }
     }
 
-    void MouseControll()
+    void MouseControl()
     {
-        
+        float horizontal = Input.GetAxis("Mouse X");
+        float vertical = Input.GetAxis("Mouse Y");
+
+        if ( horizontal != 0)
+        {
+            transform.Rotate(0, horizontal * sensitivity.x, 0);
+        }
+
+        if (vertical != 0)
+        {
+            Vector3 rotation = camera.localEulerAngles;
+            rotation.x = (rotation.x - vertical * sensitivity.y + 360) % 360;
+
+            if (rotation.x > 80 && rotation.x < 180)
+            {
+                rotation.x = 80;
+            }
+            else if (rotation.x < 280 && rotation.x > 180)
+            {
+                rotation.x = 280;
+            }
+
+            camera.localEulerAngles = rotation;
+        }
     }
 }

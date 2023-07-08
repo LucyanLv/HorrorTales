@@ -427,9 +427,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99069540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.356, y: 4.676, z: 1.104}
-  m_LocalScale: {x: 0.19266488, y: 0.1926649, z: 0.19266488}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3559993, y: 4.676, z: 1.1039984}
+  m_LocalScale: {x: 0.19266489, y: 0.1926649, z: 0.19266489}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1693251486718776489}
@@ -485,16 +485,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99069540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d550da5fd743c5a438b498ec138abca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sensY: 300
   sensX: 300
-  orientation: {fileID: 1447306344}
-  camPos: {fileID: 580734952}
-  playerVisionCenter: {fileID: 580734952}
+  orientation: {fileID: 0}
+  camPos: {fileID: 0}
+  playerVisionCenter: {fileID: 0}
 --- !u!1001 &101154299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35471,37 +35471,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3741611746674072307, guid: 3b562b2e2c60b0f409b819eafb59c39b, type: 3}
   m_PrefabInstance: {fileID: 556671021}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &580734951
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 580734952}
-  m_Layer: 0
-  m_Name: camPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &580734952
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580734951}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 4.62, z: 1.64}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1693251486718776489}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &595539666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39315,37 +39284,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2aa851146fa772e40b88d1f4accb9be8, type: 3}
   m_PrefabInstance: {fileID: 1445249533}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1447306343
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1447306344}
-  m_Layer: 0
-  m_Name: Orientation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1447306344
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447306343}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 4.62, z: 0.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1693251486718776489}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460869148 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5022930203565029238, guid: 99cc3f822ba84c240bbbfe58fa71dc71, type: 3}
@@ -42519,12 +42457,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 207793679176336360, guid: 8719181005f00aa419619e969bb07eab, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1447306344}
-    - targetCorrespondingSourceObject: {fileID: 207793679176336360, guid: 8719181005f00aa419619e969bb07eab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 580734952}
-    - targetCorrespondingSourceObject: {fileID: 207793679176336360, guid: 8719181005f00aa419619e969bb07eab, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 99069543}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 696347018587593042, guid: 8719181005f00aa419619e969bb07eab, type: 3}
@@ -42539,9 +42471,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 696347018587593042, guid: 8719181005f00aa419619e969bb07eab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2222043374256819713}
-    - targetCorrespondingSourceObject: {fileID: 696347018587593042, guid: 8719181005f00aa419619e969bb07eab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2222043374256819711}
     - targetCorrespondingSourceObject: {fileID: 696347018587593042, guid: 8719181005f00aa419619e969bb07eab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2222043374256819712}
@@ -42593,7 +42522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   mouseSensitivity: 350
-  orientation: {fileID: 1447306344}
+  orientation: {fileID: 0}
   footstepSounds: []
 --- !u!54 &2222043374256819709
 Rigidbody:
@@ -42622,22 +42551,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2222043374256819711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2222043374256819706}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a0da313945e4e4f9328fb8b4c9fe7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 10
-  runSpeed: 20
-  footstepSounds: []
-  animator: {fileID: 2222043374256819707}
 --- !u!82 &2222043374256819712
 AudioSource:
   m_ObjectHideFlags: 0
@@ -42770,6 +42683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 50
+  sensitivity: {x: 3, y: 3}
+  camera: {fileID: 99069543}
 --- !u!4 &5015818991421170991 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3741611746674072307, guid: 3b562b2e2c60b0f409b819eafb59c39b, type: 3}
