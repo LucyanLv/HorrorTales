@@ -44,4 +44,6 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     {
         // throw new System.NotImplementedException();
     }
+
+
 }
