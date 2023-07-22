@@ -13,7 +13,6 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-
         Debug.Log($"me han clikeado { GetComponent<PuzzlePart>().Id}");
         GetComponent<PuzzlePart>().wasClicked();
     }
@@ -25,6 +24,7 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         List<RaycastResult> raycastResultList = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, raycastResultList);
         List<RaycastResult> a = raycastResultList.Where(t => t.gameObject.CompareTag("Collectable")).ToList();

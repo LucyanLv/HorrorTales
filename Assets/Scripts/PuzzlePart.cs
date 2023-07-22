@@ -9,7 +9,7 @@ public class PuzzlePart : MonoBehaviour
     private SpriteRenderer[] imgs;
     private bool aumentado = false;
     public float Id { get => id; set => id = value; }
-
+    public float zoomin;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -40,11 +40,10 @@ public class PuzzlePart : MonoBehaviour
     private void rotatePart()
     {
         aumentado = true;
+        transform.Rotate(-90,transform.rotation.y, transform.rotation.z);
         Vector3 pos = new Vector3(Screen.width / 2, Screen.height / 2, 0.7f);
-       
-       
             transform.position = Camera.main.ScreenToWorldPoint(pos);
-            transform.localScale *= 2f;
+            transform.localScale *= zoomin;
        
     }
 }
