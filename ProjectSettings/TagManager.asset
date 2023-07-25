@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Collectable
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - PaderesCasa
-  - 
-  - 
+  - AnimationLaunchers
+  - LigthChangers
   - 
   - 
   - 

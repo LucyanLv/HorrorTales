@@ -11,7 +11,30 @@ public class FieldOfView : MonoBehaviour
     void Awake()
     {
         visionCollider = GetComponent<SphereCollider>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
+
+    
+
+    // private void Update()
+    // {
+    //     RaycastHit hit;
+    //     Vector3 _newPosition = new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.transform.position.z);
+    //     Physics.Raycast(Camera.main.ScreenPointToRay(_newPosition), out hit);
+    //     //Debug.Log(hit.collider.gameObject.name);
+    //     if (hit.collider)
+    //     {
+    //         Debug.Log(hit.collider + "1er if");
+
+    //         if (hit.collider.GetComponent<PuzzlePart>())
+    //         {
+    //             Debug.Log(hit.collider + "2do if");
+    //             Debug.Log(hit.collider.gameObject);
+    //             _obj.SetActive(hit.collider.GetComponent<PuzzlePart>() ? true : false);
+    //         }
+
+    //     }
+    // }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

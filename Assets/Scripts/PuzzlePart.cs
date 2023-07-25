@@ -6,11 +6,14 @@ public class PuzzlePart : MonoBehaviour
 {
     [SerializeField] private float id;
     private AudioSource audioSource;
+    private SpriteRenderer[] imgs;
+    private bool aumentado = false;
     public float Id { get => id; set => id = value; }
-
+    public float zoomin;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+         imgs = GetComponentsInChildren<SpriteRenderer>();
     }
     public void wasClicked()
     {
@@ -18,6 +21,29 @@ public class PuzzlePart : MonoBehaviour
         GameObject.Find($"111_{Id}").GetComponent<SpriteRenderer>().enabled = true;
         Debug.Log($"111_{Id} mostrarse {GameObject.Find($"111_{Id}").GetComponent<SpriteRenderer>().enabled}");
         audioSource.Play();
-        Destroy(this.gameObject);
+        rotatePart();
+        
+    }
+
+    private void Update()
+    {
+        if (aumentado)
+        {
+            transform.Rotate(Vector3.up * 0.5f);
+            if (Input.GetMouseButtonDown(0))
+            {
+                //TODO ANIMACION DE DESAPARECER
+                Destroy(this.gameObject);
+            }
+        }
+    }
+    private void rotatePart()
+    {
+        aumentado = true;
+        transform.Rotate(-90,transform.rotation.y, transform.rotation.z);
+        Vector3 pos = new Vector3(Screen.width / 2, Screen.height / 2, 0.7f);
+            transform.position = Camera.main.ScreenToWorldPoint(pos);
+            transform.localScale *= zoomin;
+       
     }
 }
