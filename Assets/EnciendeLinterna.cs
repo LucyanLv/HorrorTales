@@ -6,13 +6,16 @@ public class EnciendeLinterna : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnciendeLuz"))
+        if (LayerMask.LayerToName(other.gameObject.layer) == "LigthChangers")
         {
-            GetComponent<ControladorLinterna>().Enciende();
-        }
-        else
-        {
-            GetComponent<ControladorLinterna>().Apaga();
+            if (other.CompareTag("EnciendeLuz"))
+            {
+                GetComponent<ControladorLinterna>().Enciende();
+            }
+            else
+            {
+                GetComponent<ControladorLinterna>().Apaga();
+            }
         }
     }
 }

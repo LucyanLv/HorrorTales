@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 1839947341218841259}
   - component: {fileID: 2207685038976103153}
   - component: {fileID: 236380377180353637}
-  - component: {fileID: 1014255595}
-  - component: {fileID: 1014255594}
+  - component: {fileID: 4630599345759298080}
   m_Layer: 0
-  m_Name: Puerta_LowPoly.009
-  m_TagString: Untagged
+  m_Name: Puerta_LowPoly_009
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,19 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1014255595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441731735134233216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0728f48ca59b4b2448bd8d56814185a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &1014255594
+--- !u!65 &4630599345759298080
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,8 +124,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0074011968, y: 0.02926373, z: 0.01946814}
-  m_Center: {x: 0.002767001, y: 0.0016117886, z: -0.009269628}
+  m_Size: {x: 0.007401204, y: 0.0012943904, z: 0.01946814}
+  m_Center: {x: 0.0027670045, y: 0.0000000024738247, z: -0.009269625}
 --- !u!1 &7445590573818769860
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +139,7 @@ GameObject:
   - component: {fileID: 1240823893897670201}
   m_Layer: 0
   m_Name: MarcoPuerta
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,10 +218,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2404926822908189673}
-  - component: {fileID: 1959737782}
+  - component: {fileID: 2908384965621696155}
+  - component: {fileID: 6291464418799746524}
   m_Layer: 0
   m_Name: Pivote Puerta
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,9 +242,9 @@ Transform:
   - {fileID: 8613012236425328981}
   - {fileID: 2994032852984389240}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1959737782
+--- !u!65 &2908384965621696155
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,5 +263,17 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 15.908104, y: 32.179302, z: 0.99853945}
-  m_Center: {x: 7.9774666, y: 14.956518, z: -0.024097204}
+  m_Size: {x: 17.879839, y: 1, z: 37.01683}
+  m_Center: {x: 6.379015, y: 0, z: 0.8342171}
+--- !u!114 &6291464418799746524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736859366464103036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0728f48ca59b4b2448bd8d56814185a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

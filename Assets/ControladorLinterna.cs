@@ -32,7 +32,7 @@ public class ControladorLinterna : MonoBehaviour
         Debug.DrawLine(transform.position, transform.forward * distanciaMaximaLuz, Color.white);
 
         distancia = hit.collider ? Vector3.Distance(transform.position, hit.point) : 1000;
-        Debug.Log(ReturnedValue(distancia, 0, 100, 0, 40000));
+//        Debug.Log(ReturnedValue(distancia, 0, 100, 0, 40000));
         linterna.intensity = ReturnedValue(distancia, 0, 100, 0, 40000);
     }
     public void Enciende()

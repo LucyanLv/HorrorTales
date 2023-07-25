@@ -6,10 +6,12 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     Animator controller;
+    [SerializeField] private bool canBeOpened = false;
+    [SerializeField] private bool doorOpened = false;
 
     private void Start()
     {
-        controller = GetComponent<Animator>();
+        controller = transform.Find("Puerta_LowPoly_009").GetComponent<Animator>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -18,10 +20,12 @@ public class Door : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            
-            if(Input.GetMouseButtonDown(0))
+
+            if (Input.GetMouseButtonDown(0))
             {
-                controller.SetBool("Opened", true);
+                doorOpened = !doorOpened;
+                controller.SetBool("Opened", doorOpened);
+                controller.SetBool("Closed", !doorOpened);
             }
 
         }
@@ -29,11 +33,11 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            controller.SetBool("Closed", true);
-            controller.SetBool("Opened", false);
-        }
+        // if (other.CompareTag("Player"))
+        // {
+        //     controller.SetBool("Closed", true);
+        //     controller.SetBool("Opened", false);
+        // }
 
     }
 }
