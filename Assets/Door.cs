@@ -6,7 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     Animator controller;
-    [SerializeField] private bool canBeOpened = false;
+    [SerializeField] private bool isLocked = true;
     [SerializeField] private bool doorOpened = false;
 
     private void Start()
@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !isLocked)
             {
                 doorOpened = !doorOpened;
                 controller.SetBool("Opened", doorOpened);
@@ -29,6 +29,13 @@ public class Door : MonoBehaviour
             }
 
         }
+    }
+
+    public void UnlockDoor()
+    {
+        isLocked = false;
+        Debug.Log("Soy una puerta y me han desbloqueado");
+        // TODO play leiftmotive de desbloqueo de puerta
     }
 
     private void OnTriggerExit(Collider other)
