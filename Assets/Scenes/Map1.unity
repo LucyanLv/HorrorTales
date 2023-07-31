@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.010373809, g: 0.010728815, b: 0.010919708, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -38689,6 +38689,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6291464418799746524, guid: d33e5c1b46d9de84b87d8cfa5f857c14, type: 3}
+      propertyPath: doorOpened
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291464418799746524, guid: d33e5c1b46d9de84b87d8cfa5f857c14, type: 3}
+      propertyPath: maxInteractDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7736859366464103036, guid: d33e5c1b46d9de84b87d8cfa5f857c14, type: 3}
       propertyPath: m_Name
       value: Pivote Puerta (3)
@@ -50177,7 +50185,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32962
+  m_Name: pb_Mesh32974
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
