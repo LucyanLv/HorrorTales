@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2207685038976103153}
   - component: {fileID: 236380377180353637}
   - component: {fileID: 4630599345759298080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Puerta_LowPoly_009
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2994032852984389240}
   - component: {fileID: 3476158923792578114}
   - component: {fileID: 1240823893897670201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MarcoPuerta
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 2404926822908189673}
   - component: {fileID: 2908384965621696155}
   - component: {fileID: 6291464418799746524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pivote Puerta
   m_TagString: Door
   m_Icon: {fileID: 0}

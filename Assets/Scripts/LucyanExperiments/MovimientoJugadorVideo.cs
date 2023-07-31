@@ -14,7 +14,6 @@ public class MovimientoJugadorVideo : MonoBehaviour
     //Animación
     Animator animator;
     bool isMoving;
-    bool idle;
 
     public Vector2 sensitivity;
 
@@ -51,13 +50,11 @@ public class MovimientoJugadorVideo : MonoBehaviour
         if (horizontal != 0 || vertical != 0)
         {
             isMoving = true;
-            idle = false;
 
             Vector3 direction = (transform.forward * vertical + transform.right * horizontal).normalized;
             rigidbody.velocity = direction * movementSpeed;
 
             animator.SetBool("Moving", isMoving);
-            animator.SetBool("Idle", idle);
 
             // Cambiar el valor del parámetro de velocidad del evento de pasos
             float characterSpeed = Mathf.Abs(vertical) + Mathf.Abs(horizontal);
@@ -73,11 +70,9 @@ public class MovimientoJugadorVideo : MonoBehaviour
         }
         else if (horizontal == 0 && vertical == 0)
         {
-            idle = true;
             isMoving = false;
 
             rigidbody.velocity = Vector3.zero;
-            animator.SetBool("Idle", idle);
 
             // Detener el evento de pasos
             footstepEvent.stop(STOP_MODE.ALLOWFADEOUT);

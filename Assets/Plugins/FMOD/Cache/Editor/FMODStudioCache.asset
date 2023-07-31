@@ -55,10 +55,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/CharacterSounds.bank
   Name: CharacterSounds
   StudioPath: bank:/CharacterSounds
-  lastModified: 638263324901205564
+  lastModified: 638264053888788011
   FileSizes:
   - Name: Desktop
-    Value: 23648
+    Value: 21952
   Exists: 1
 --- !u!114 &-2254104407113562148
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638263585681685030
+  lastModified: 638263993122250587
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -154,15 +154,15 @@ MonoBehaviour:
   - {fileID: -6120643899143182960}
   - {fileID: -6341493301577860117}
   EditorEvents:
-  - {fileID: 5223441825392067752}
   - {fileID: -490003151485161147}
   - {fileID: -729789569904041963}
+  - {fileID: 8936642026313872284}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2254104407113562148}
   StringsBanks:
   - {fileID: 5042333219883694895}
-  cacheTime: 638263587912440243
+  cacheTime: 638264053888788011
   cacheVersion: 131605
 --- !u!114 &3886448611338858139
 MonoBehaviour:
@@ -203,12 +203,37 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638263585681715640
+  lastModified: 638263993122273994
   FileSizes:
   - Name: Desktop
-    Value: 1124
+    Value: 1130
   Exists: 1
---- !u!114 &5223441825392067752
+--- !u!114 &7352085571560324663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Parameter 1
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3778666482
+    data2: 3210243771
+  Type: 0
+  IsGlobal: 0
+  Labels:
+  - Madera
+  Exists: 1
+--- !u!114 &8936642026313872284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,9 +254,10 @@ MonoBehaviour:
   Banks:
   - {fileID: -5470166014425314542}
   IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7352085571560324663}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
