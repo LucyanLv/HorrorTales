@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638263343043584281
+  lastModified: 638263587912440243
   FileSizes:
   - Name: Desktop
-    Value: 182720
+    Value: 183104
   Exists: 1
 --- !u!114 &-6120643899143182960
 MonoBehaviour:
@@ -40,34 +40,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 494
   Exists: 1
---- !u!114 &-5772894983433660276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/House/BrokenWindow
-  m_EditorClassIdentifier: 
-  Path: event:/House/BrokenWindow
-  Guid:
-    Data1: -969980688
-    Data2: 1194958570
-    Data3: -1399075413
-    Data4: 787985245
-  Banks:
-  - {fileID: -6341493301577860117}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 5644172637186130873}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5470166014425314542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,11 +75,39 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638263337235162985
+  lastModified: 638263585681685030
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-729789569904041963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/House/BrokenWindow
+  m_EditorClassIdentifier: 
+  Path: event:/House/BrokenWindow
+  Guid:
+    Data1: -6963071
+    Data2: 1286152983
+    Data3: 729640624
+    Data4: -1860259734
+  Banks:
+  - {fileID: -6341493301577860117}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3886448611338858139}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-490003151485161147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,16 +154,40 @@ MonoBehaviour:
   - {fileID: -6120643899143182960}
   - {fileID: -6341493301577860117}
   EditorEvents:
-  - {fileID: -5772894983433660276}
   - {fileID: 5223441825392067752}
   - {fileID: -490003151485161147}
+  - {fileID: -729789569904041963}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2254104407113562148}
   StringsBanks:
   - {fileID: 5042333219883694895}
-  cacheTime: 638263343043584281
+  cacheTime: 638263587912440243
   cacheVersion: 131605
+--- !u!114 &3886448611338858139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BrokenWindow/ScatterWindow
+  m_EditorClassIdentifier: 
+  Name: ScatterWindow
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4115129145
+    data2: 3273232410
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5042333219883694895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,10 +203,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638263337235200961
+  lastModified: 638263585681715640
   FileSizes:
   - Name: Desktop
-    Value: 1128
+    Value: 1124
   Exists: 1
 --- !u!114 &5223441825392067752
 MonoBehaviour:
@@ -211,27 +235,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5644172637186130873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BrokenWindow/BrokenWindowLoop
-  m_EditorClassIdentifier: 
-  Name: BrokenWindowLoop
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1762478383
-    data2: 1237228071
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
