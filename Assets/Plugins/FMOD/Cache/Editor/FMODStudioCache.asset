@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638264151655384321
+  lastModified: 638265109719658821
   FileSizes:
   - Name: Desktop
-    Value: 286304
+    Value: 250336
   Exists: 1
 --- !u!114 &-6120643899143182960
 MonoBehaviour:
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/CharacterSounds.bank
   Name: CharacterSounds
   StudioPath: bank:/CharacterSounds
-  lastModified: 638264053888788011
+  lastModified: 638265142381387298
   FileSizes:
   - Name: Desktop
     Value: 21952
@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: -2254104407113562148}
   StringsBanks:
   - {fileID: 5042333219883694895}
-  cacheTime: 638264151655384321
+  cacheTime: 638265142381387298
   cacheVersion: 131605
 --- !u!114 &3886448611338858139
 MonoBehaviour:
