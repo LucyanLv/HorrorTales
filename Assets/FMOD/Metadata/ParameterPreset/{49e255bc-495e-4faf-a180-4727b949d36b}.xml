@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{49e255bc-495e-4faf-a180-4727b949d36b}">
+		<property name="name">
+			<value>BrokenWindowLoop</value>
+		</property>
+		<relationship name="folder">
+			<destination>{089b67a1-5e8d-4df4-90d4-745bd42cc249}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cd711b9c-be0a-48c5-805f-f68eb6d8dac7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cd711b9c-be0a-48c5-805f-f68eb6d8dac7}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

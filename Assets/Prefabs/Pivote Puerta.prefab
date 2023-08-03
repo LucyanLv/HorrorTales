@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2207685038976103153}
   - component: {fileID: 236380377180353637}
   - component: {fileID: 4630599345759298080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Puerta_LowPoly_009
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2441731735134233216}
   m_LocalRotation: {x: -0.7071068, y: -0.00000023040464, z: -0.00000023040465, w: 0.7071067}
-  m_LocalPosition: {x: 0.72, y: 30.8387, z: 1.18}
-  m_LocalScale: {x: 1957.7819, y: 557.493, z: 1691.0339}
+  m_LocalPosition: {x: 1.2722, y: 30.7191, z: 1.18}
+  m_LocalScale: {x: 2294.5205, y: 557.493, z: 1786.9155}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2404926822908189673}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3780671244086486322, guid: 9e32e61a05fe7964390fea2afcf012b6, type: 3}
+  - {fileID: 2100000, guid: 05f9775b0ce2d4645a1362854808720d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2994032852984389240}
   - component: {fileID: 3476158923792578114}
   - component: {fileID: 1240823893897670201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MarcoPuerta
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -152,8 +152,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7445590573818769860}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.4999999, w: 0.5000001}
-  m_LocalPosition: {x: 6.3509674, y: 15.29755, z: 1.11}
-  m_LocalScale: {x: 320.78796, y: 1360.1046, z: 2715.5588}
+  m_LocalPosition: {x: 7.8718, y: 14.2968, z: 1.11}
+  m_LocalScale: {x: 320.78796, y: 1594.0427, z: 2869.531}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2404926822908189673}
@@ -187,7 +187,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1886820026795636259, guid: 9e32e61a05fe7964390fea2afcf012b6, type: 3}
+  - {fileID: 2100000, guid: 90c093f504fb8854997c6b5386538017, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 2404926822908189673}
   - component: {fileID: 2908384965621696155}
   - component: {fileID: 6291464418799746524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pivote Puerta
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ Transform:
   - {fileID: 8613012236425328981}
   - {fileID: 2994032852984389240}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2908384965621696155
 BoxCollider:
@@ -259,12 +259,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 17.879839, y: 35.593754, z: 52.941967}
-  m_Center: {x: 6.379015, y: 15.3648815, z: 0.88132095}
+  m_Size: {x: 30.941738, y: 35.593754, z: 52.941967}
+  m_Center: {x: 7.36751, y: 15.3648815, z: 0.88132095}
 --- !u!114 &6291464418799746524
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -417,8 +417,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../Platzi Audio/Uso Fmod/Uso Fmod.fspro
-  sourceBankPath: ../../Platzi Audio/Uso Fmod/Build
+  sourceProjectPath: Assets/FMOD/Horrortales.fspro
+  sourceBankPath: Assets/FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -442,6 +442,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - CharacterSounds
   - Music
   - SFX
   BanksToLoad: []

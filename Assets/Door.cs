@@ -26,8 +26,16 @@ public class Door : MonoBehaviour
                 doorOpened = !doorOpened;
                 controller.SetBool("Opened", doorOpened);
                 controller.SetBool("Closed", !doorOpened);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
+                StartCoroutine(OpenDoorCourtine());
             }
 
+        }
+
+        IEnumerator OpenDoorCourtine()
+        {
+            yield return new WaitForSeconds(0.5f);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/House/OpeningDoor");
         }
     }
 
