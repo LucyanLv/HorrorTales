@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CinematicsSettings
   cinematics:
   - cinematic: {fileID: 11400000, guid: f96a68c55c7c6734b95e6cc825f5291e, type: 2}
-    doorIds: 000000000000000000000000
+    doorIds: 01000000

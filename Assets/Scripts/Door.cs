@@ -4,15 +4,17 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     Animator controller;
+    [SerializeField] private int id;
     [SerializeField] private bool doorOpened = false;
+    [SerializeField] private bool doorLocked = true;
     [SerializeField] private float maxInteractDistance = 3f;
+    public int Id { get => id; set => id = value; }
 
     private void Start()
     {
-        controller = transform.Find("Puerta_LowPoly_009").GetComponent<Animator>();
+        controller = transform.GetComponentInChildren<Animator>();
     }
-
-    private void Update()
+    private void OnTriggerStay(Collider other)
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -28,14 +30,19 @@ public class Door : MonoBehaviour
                     StartCoroutine(OpenDoorCoroutine());
                 }
             }
+            else
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
+            }
         }
+
     }
 
     private bool CanInteractWithDoor()
     {
         // Check if the player is tagged as "Player" and within the interactable distance
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        if (player != null && !doorLocked)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             return distanceToPlayer <= maxInteractDistance;
@@ -47,5 +54,12 @@ public class Door : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         FMODUnity.RuntimeManager.PlayOneShot("event:/House/OpeningDoor");
+    }
+
+    public void unlockDoor()
+    {
+        doorLocked = false;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
+
     }
 }
