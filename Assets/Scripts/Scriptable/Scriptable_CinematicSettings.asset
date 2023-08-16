@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Scriptable_CinematicSettings
   m_EditorClassIdentifier: Assembly-CSharp::CinematicsSettings
   cinematics:
-  - cinematic: {fileID: 11400000, guid: f96a68c55c7c6734b95e6cc825f5291e, type: 2}
+  - cinematic: {fileID: 11400000, guid: d082e31cffddf0e4f88a2d9d69c51869, type: 2}
     doorIds: 01000000
+  - cinematic: {fileID: 11400000, guid: ab6c1d75cf4890e45908c1b7c3330040, type: 2}
+    doorIds: 02000000
+  - cinematic: {fileID: 11400000, guid: 3064536a43b480346bb39f033de9683d, type: 2}
+    doorIds: 03000000
+  - cinematic: {fileID: 11400000, guid: 1299b7b3c29e7aa469e3585e3d1553c5, type: 2}
+    doorIds: 04000000
