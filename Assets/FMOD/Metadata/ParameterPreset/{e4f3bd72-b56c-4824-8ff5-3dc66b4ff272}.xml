@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{e4f3bd72-b56c-4824-8ff5-3dc66b4ff272}">
+		<property name="name">
+			<value>Volumen</value>
+		</property>
+		<relationship name="folder">
+			<destination>{089b67a1-5e8d-4df4-90d4-745bd42cc249}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3ddfe69d-288e-48c8-b671-71c7016c602f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3ddfe69d-288e-48c8-b671-71c7016c602f}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{b43e58ba-1966-4bb2-8e91-3d5efbbcf84c}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{b43e58ba-1966-4bb2-8e91-3d5efbbcf84c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>
