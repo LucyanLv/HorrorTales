@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638265241849864932
+  lastModified: 638284220263348249
   FileSizes:
   - Name: Desktop
-    Value: 250336
+    Value: 440704
   Exists: 1
 --- !u!114 &-6120643899143182960
 MonoBehaviour:
@@ -102,7 +102,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638264151652772091
+  lastModified: 638284220258229246
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -185,12 +185,13 @@ MonoBehaviour:
   - {fileID: -729789569904041963}
   - {fileID: 8936642026313872284}
   - {fileID: -5925810320391511697}
+  - {fileID: 9163456680261826689}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2254104407113562148}
   StringsBanks:
   - {fileID: 5042333219883694895}
-  cacheTime: 638265241849864932
+  cacheTime: 638284220263348249
   cacheVersion: 131605
 --- !u!114 &3886448611338858139
 MonoBehaviour:
@@ -231,10 +232,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638264151652807267
+  lastModified: 638284220258249259
   FileSizes:
   - Name: Desktop
-    Value: 1172
+    Value: 1232
   Exists: 1
 --- !u!114 &7352085571560324663
 MonoBehaviour:
@@ -289,3 +290,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &9163456680261826689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/House/OtherSideOfTheDoor
+  m_EditorClassIdentifier: 
+  Path: event:/House/OtherSideOfTheDoor
+  Guid:
+    Data1: -1658980024
+    Data2: 1113912788
+    Data3: -195079005
+    Data4: 1688868725
+  Banks:
+  - {fileID: -6341493301577860117}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14500
