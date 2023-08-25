@@ -46,7 +46,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
+        animator.SetBool("Moving", isMoving);
         if (horizontal != 0 || vertical != 0)
         {
             isMoving = true;
@@ -54,7 +54,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
             Vector3 direction = (transform.forward * vertical + transform.right * horizontal).normalized;
             rigidbody.velocity = direction * movementSpeed;
 
-            animator.SetBool("Moving", isMoving);
+
 
             // Cambiar el valor del parámetro de velocidad del evento de pasos
             float characterSpeed = Mathf.Abs(vertical) + Mathf.Abs(horizontal);
@@ -71,7 +71,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
         else if (horizontal == 0 && vertical == 0)
         {
             isMoving = false;
-
+            //animator.SetBool("Moving", isMoving);
             rigidbody.velocity = Vector3.zero;
 
             // Detener el evento de pasos
