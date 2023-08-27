@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using FMOD.Studio; // Asegúrate de importar la librería de FMOD
+//using FMOD.Studio;
 
 public class MovimientoJugadorVideo : MonoBehaviour
 {
     private new Rigidbody rigidbody;
-    private EventInstance footstepEvent;
+    //private EventInstance footstepEvent;
 
     public float movementSpeed;
 
@@ -28,7 +28,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         // Inicializar el evento de pasos
-        footstepEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Character/Footsteps"); // "Footsteps" es el nombre del evento de pasos que creaste en FMOD Studio
+        //footstepEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Character/Footsteps"); // "Footsteps" es el nombre del evento de pasos que creaste en FMOD Studio
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
+        animator.SetBool("Moving", isMoving);
         if (horizontal != 0 || vertical != 0)
         {
             isMoving = true;
@@ -54,28 +54,28 @@ public class MovimientoJugadorVideo : MonoBehaviour
             Vector3 direction = (transform.forward * vertical + transform.right * horizontal).normalized;
             rigidbody.velocity = direction * movementSpeed;
 
-            animator.SetBool("Moving", isMoving);
+
 
             // Cambiar el valor del parámetro de velocidad del evento de pasos
             float characterSpeed = Mathf.Abs(vertical) + Mathf.Abs(horizontal);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Speed", characterSpeed);
+            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Speed", characterSpeed);
 
             // Iniciar el evento de pasos (solo si no se está reproduciendo ya)
-            PLAYBACK_STATE playbackState;
-            footstepEvent.getPlaybackState(out playbackState);
-            if (playbackState != PLAYBACK_STATE.PLAYING)
-            {
-                footstepEvent.start();
-            }
+            //PLAYBACK_STATE playbackState;
+            //footstepEvent.getPlaybackState(out playbackState);
+            //if (playbackState != PLAYBACK_STATE.PLAYING)
+            //{
+            //    footstepEvent.start();
+            //}
         }
         else if (horizontal == 0 && vertical == 0)
         {
             isMoving = false;
-
+            //animator.SetBool("Moving", isMoving);
             rigidbody.velocity = Vector3.zero;
 
             // Detener el evento de pasos
-            footstepEvent.stop(STOP_MODE.ALLOWFADEOUT);
+            //footstepEvent.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
 
@@ -110,6 +110,6 @@ public class MovimientoJugadorVideo : MonoBehaviour
     private void OnDestroy()
     {
         // Liberar la instancia del evento de pasos al salir del juego o destruir el objeto
-        footstepEvent.release();
+        //footstepEvent.release();
     }
 }
