@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638284220263348249
+  lastModified: 638285894034700713
   FileSizes:
   - Name: Desktop
-    Value: 440704
+    Value: 441248
   Exists: 1
 --- !u!114 &-6120643899143182960
 MonoBehaviour:
@@ -82,11 +82,39 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/CharacterSounds.bank
   Name: CharacterSounds
   StudioPath: bank:/CharacterSounds
-  lastModified: 638265142381387298
+  lastModified: 638285894033772692
   FileSizes:
   - Name: Desktop
-    Value: 21952
+    Value: 25824
   Exists: 1
+--- !u!114 &-3693414196408036170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Linterna
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Linterna
+  Guid:
+    Data1: 815308854
+    Data2: 1314428642
+    Data3: -539127661
+    Data4: -1205638438
+  Banks:
+  - {fileID: -5470166014425314542}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 990475470152180893}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 138
 --- !u!114 &-2254104407113562148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +130,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638284220258229246
+  lastModified: 638285894033969002
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -186,13 +214,38 @@ MonoBehaviour:
   - {fileID: 8936642026313872284}
   - {fileID: -5925810320391511697}
   - {fileID: 9163456680261826689}
+  - {fileID: -3693414196408036170}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2254104407113562148}
   StringsBanks:
   - {fileID: 5042333219883694895}
-  cacheTime: 638284220263348249
+  cacheTime: 638285894034700713
   cacheVersion: 131605
+--- !u!114 &990475470152180893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Linterna/Prende0Apaga1
+  m_EditorClassIdentifier: 
+  Name: Prende0Apaga1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 449470298
+    data2: 2728359888
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &3886448611338858139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,10 +285,34 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638284220258249259
+  lastModified: 638285894033984236
   FileSizes:
   - Name: Desktop
-    Value: 1232
+    Value: 1376
+  Exists: 1
+--- !u!114 &5610230589450591961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/OtherSideOfTheDoor/Volumen
+  m_EditorClassIdentifier: 
+  Name: Volumen
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 1835797988
+    data2: 1451805282
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &7352085571560324663
 MonoBehaviour:
@@ -310,10 +387,11 @@ MonoBehaviour:
     Data4: 1688868725
   Banks:
   - {fileID: -6341493301577860117}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 5610230589450591961}
   MinDistance: 1
   MaxDistance: 20
   Length: 14500

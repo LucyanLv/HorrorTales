@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{ebc2d407-e6a5-4092-af57-226a72f1120b}">
+	<object class="AudioFile" id="{02b93d9c-534c-45ee-a147-da6e9ce70f53}">
 		<property name="assetPath">
-			<value>OpenDoor-005.wav</value>
+			<value>Linterna.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>3</value>
+			<value>0.1388888888888889</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{be6c7ab7-c19e-4306-9515-62cc69b6f25a}</destination>
