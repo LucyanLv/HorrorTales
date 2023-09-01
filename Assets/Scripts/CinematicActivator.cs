@@ -11,6 +11,7 @@ public class CinematicActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log($"player entro en el {gameObject.name}");
             DelegatesHelper.playCinematic.Invoke(cinematicIndex);
         }
     }

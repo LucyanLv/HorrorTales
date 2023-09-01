@@ -30,12 +30,21 @@ public class CinematicController : MonoBehaviour
     {
         currentCinematicIndex = index;
         director.playableAsset = settings.Cinematics[currentCinematicIndex].Cinematic;
-        director.Play();
+        string anim = $"Animation_0{currentCinematicIndex}";
+        Debug.Log($" se supone dara play a {director.playableAsset.name}  y la anim {anim}");
+        GameObject a = GameObject.Find(anim);
+        if (a == null)
+        {
+            Debug.Log("nnooooooooooo");
+        }
+        a.GetComponent<PlayableDirector>().Play();
     }
 
     public void CinematicFinished(PlayableDirector director)
     {
+
         DelegatesHelper.cinematicFinished.Invoke(currentCinematicIndex);
+        transform.Find($"Animation_0{currentCinematicIndex}").gameObject.SetActive(false);
         Debug.Log("Aqui se llama al controlador de puertas y se activan segun ids");
     }
 }
