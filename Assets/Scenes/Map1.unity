@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009466275, g: 0.009865089, b: 0.010013665, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -46322,10 +46322,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d8703a9a9c5f60748bf98639f372c92c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1712607523}
+      addedObject: {fileID: 1712607526}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d8703a9a9c5f60748bf98639f372c92c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1712607526}
+      addedObject: {fileID: 1712607529}
   m_SourcePrefab: {fileID: 100100000, guid: d8703a9a9c5f60748bf98639f372c92c, type: 3}
 --- !u!4 &867750569 stripped
 Transform:
@@ -49458,6 +49458,8 @@ PlayableDirector:
     value: {fileID: 1213638818}
   - key: {fileID: 3031972486770804824, guid: b37ad3c029832b044adb447f1f093f6f, type: 2}
     value: {fileID: 1213638820}
+  - key: {fileID: 5501021112773599111, guid: b37ad3c029832b044adb447f1f093f6f, type: 2}
+    value: {fileID: 3698136409562735061}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1065308241 stripped
@@ -60269,20 +60271,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d8703a9a9c5f60748bf98639f372c92c, type: 3}
   m_PrefabInstance: {fileID: 867750568}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1712607523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712607520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45370afccd70ed4c91c47f3f89a44af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sonidoCarne: {fileID: 655910494}
-  noticiaTV: {fileID: 1438935135}
 --- !u!65 &1712607526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60304,6 +60292,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03862095, y: 0.04135849, z: 0.024451166}
   m_Center: {x: 0.015272549, y: -0.0043079387, z: 0.011725634}
+--- !u!114 &1712607529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712607520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45370afccd70ed4c91c47f3f89a44af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoCarne:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  noticiaTV:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  meatSound: 0
+  notice: 0
 --- !u!4 &1713012852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8973646929008674074, guid: 5bddc822ee940c544ad9cba4aed6dcf6, type: 3}
@@ -66033,8 +66049,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2232621007323703999}
-  m_LocalRotation: {x: -0.010032206, y: 0, z: 0, w: -0.9999497}
-  m_LocalPosition: {x: 378.2971, y: 24.680256, z: -75.18993}
+  m_LocalRotation: {x: 0.00000021692905, y: 0.000000075509895, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 407.46002, y: 13.190002, z: -104.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
