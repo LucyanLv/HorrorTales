@@ -1,33 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using FMODUnity;
-using UnityEngine.EventSystems;
+//using system.collections;
+//using system.collections.generic;
+//using unityengine;
+//using fmodunity;
+//using unityengine.eventsystems;
 
-public class AudioCanvas : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
-{
-    [SerializeField] EventReference mouseClick;
+//public class audiocanvas : monobehaviour, ipointerenterhandler, ipointerexithandler
+//{
+//    [serializefield] eventreference mouseclick;
 
-    [SerializeField] EventReference mouseEnter;
+//    [serializefield] eventreference mouseenter;
 
-    private bool isMouseOver = false;
+//    //private bool ismouseover = false;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        isMouseOver = true;
-        RuntimeManager.PlayOneShot(mouseEnter);
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        isMouseOver = false;
-    }
+//    public void onpointerenter(pointereventdata eventdata)
+//    {
+//        ismouseover = true;
+//        runtimemanager.playoneshot(mouseenter);
+//    }
+//    public void onpointerexit(pointereventdata eventdata)
+//    {
+//        ismouseover = false;
+//    }
 
-    public void PlaySoundEvent()
-    {
-        {
-            RuntimeManager.PlayOneShot(mouseClick);
-        }
-    }
+//    public void playsoundevent()
+//    {
+//        {
+//            runtimemanager.playoneshot(mouseclick);
+//        }
+//    }
 
 
-}
+//}

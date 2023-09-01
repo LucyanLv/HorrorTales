@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class EnciendeLinterna : MonoBehaviour
 {
-    [SerializeField] GameObject Linterna;
-    private EventInstance linternaEventInstance;
-    private PARAMETER_ID prendeApagaParameter;
+    GameObject lightPlayer;
 
     private void Start()
     {
-        linternaEventInstance = RuntimeManager.CreateInstance("event:/Character/Linterna");
-        linternaEventInstance.start();
-        linternaEventInstance.getParameterByID("Prende0Apaga1", out prendeApagaParameter);
+        lightPlayer = GameObject.FindWithTag("Linterna");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            prendeApagaParameter.setValue(0); // Establecer el valor del parámetro
-            linternaEventInstance.start();
-            Linterna.SetActive(false);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Character/Linterna_Prende");
+            lightPlayer.SetActive(false);
         }
     }
 
@@ -29,9 +24,8 @@ public class EnciendeLinterna : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            prendeApagaParameter.setValue(1); // Establecer el valor del parámetro
-            linternaEventInstance.start();
-            Linterna.SetActive(true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Character/Linterna_Apaga");
+            lightPlayer.SetActive(true);
         }
     }
 }

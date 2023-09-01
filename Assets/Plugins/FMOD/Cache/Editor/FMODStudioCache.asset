@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638285894034700713
+  lastModified: 638290266449141498
   FileSizes:
   - Name: Desktop
-    Value: 441248
+    Value: 1591520
   Exists: 1
 --- !u!114 &-6120643899143182960
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638258756448711608
+  lastModified: 638290271612963293
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 532864
   Exists: 1
 --- !u!114 &-5925810320391511697
 MonoBehaviour:
@@ -82,12 +82,12 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/CharacterSounds.bank
   Name: CharacterSounds
   StudioPath: bank:/CharacterSounds
-  lastModified: 638285894033772692
+  lastModified: 638289456593070466
   FileSizes:
   - Name: Desktop
-    Value: 25824
+    Value: 21952
   Exists: 1
---- !u!114 &-3693414196408036170
+--- !u!114 &-3999277666471324361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,24 +97,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Linterna
+  m_Name: event:/PermanentBackGround
   m_EditorClassIdentifier: 
-  Path: event:/Character/Linterna
+  Path: event:/PermanentBackGround
   Guid:
-    Data1: 815308854
-    Data2: 1314428642
-    Data3: -539127661
-    Data4: -1205638438
+    Data1: -916609808
+    Data2: 1102477375
+    Data3: 1188686767
+    Data4: -953404663
   Banks:
-  - {fileID: -5470166014425314542}
-  IsStream: 0
+  - {fileID: -6120643899143182960}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 990475470152180893}
+  IsOneShot: 0
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 138
+  Length: 3000
 --- !u!114 &-2254104407113562148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,12 +129,12 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638285894033969002
+  lastModified: 638290271611844232
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
---- !u!114 &-729789569904041963
+--- !u!114 &-2040735633059944788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,24 +144,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/House/BrokenWindow
+  m_Name: event:/Character/Linterna_Prende
   m_EditorClassIdentifier: 
-  Path: event:/House/BrokenWindow
+  Path: event:/Character/Linterna_Prende
   Guid:
-    Data1: -6963071
-    Data2: 1286152983
-    Data3: 729640624
-    Data4: -1860259734
+    Data1: -1930568907
+    Data2: 1104908728
+    Data3: 339237025
+    Data4: -995963224
+  Banks:
+  - {fileID: -6341493301577860117}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 138
+--- !u!114 &-1370216797027466601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Noticia
+  m_EditorClassIdentifier: 
+  Path: event:/Noticia
+  Guid:
+    Data1: -1775890360
+    Data2: 1299301796
+    Data3: 348159421
+    Data4: 1803426757
   Banks:
   - {fileID: -6341493301577860117}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
-  Parameters:
-  - {fileID: 3886448611338858139}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 43000
 --- !u!114 &-490003151485161147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,19 +235,23 @@ MonoBehaviour:
   - {fileID: -6341493301577860117}
   EditorEvents:
   - {fileID: -490003151485161147}
-  - {fileID: -729789569904041963}
   - {fileID: 8936642026313872284}
   - {fileID: -5925810320391511697}
   - {fileID: 9163456680261826689}
-  - {fileID: -3693414196408036170}
+  - {fileID: -1370216797027466601}
+  - {fileID: 4498862243014860194}
+  - {fileID: 5926357131881950898}
+  - {fileID: -2040735633059944788}
+  - {fileID: 6977087929124184265}
+  - {fileID: -3999277666471324361}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2254104407113562148}
   StringsBanks:
   - {fileID: 5042333219883694895}
-  cacheTime: 638285894034700713
+  cacheTime: 638290271612963293
   cacheVersion: 131605
---- !u!114 &990475470152180893
+--- !u!114 &4498862243014860194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,45 +260,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Linterna/Prende0Apaga1
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/House/BrokenedWindow
   m_EditorClassIdentifier: 
-  Name: Prende0Apaga1
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 449470298
-    data2: 2728359888
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &3886448611338858139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BrokenWindow/ScatterWindow
-  m_EditorClassIdentifier: 
-  Name: ScatterWindow
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4115129145
-    data2: 3273232410
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/House/BrokenedWindow
+  Guid:
+    Data1: -1233599533
+    Data2: 1161230315
+    Data3: -1894770539
+    Data4: 1035635056
+  Banks:
+  - {fileID: -6341493301577860117}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14000
 --- !u!114 &5042333219883694895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,12 +293,12 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638285894033984236
+  lastModified: 638290271611889764
   FileSizes:
   - Name: Desktop
-    Value: 1376
+    Value: 1470
   Exists: 1
---- !u!114 &5610230589450591961
+--- !u!114 &5926357131881950898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,21 +307,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/OtherSideOfTheDoor/Volumen
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Linterna_Apaga
   m_EditorClassIdentifier: 
-  Name: Volumen
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 1835797988
-    data2: 1451805282
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/Character/Linterna_Apaga
+  Guid:
+    Data1: -514692330
+    Data2: 1182909979
+    Data3: -1340256867
+    Data4: 1629300451
+  Banks:
+  - {fileID: -6341493301577860117}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 138
+--- !u!114 &6977087929124184265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiente
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiente
+  Guid:
+    Data1: -1353994846
+    Data2: 1234654152
+    Data3: 1392075420
+    Data4: 824214887
+  Banks:
+  - {fileID: -6120643899143182960}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7877679640457450579}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
 --- !u!114 &7352085571560324663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +377,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels:
   - Madera
+  Exists: 1
+--- !u!114 &7877679640457450579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambiente/ScaryBackGround
+  m_EditorClassIdentifier: 
+  Name: ScaryBackGround
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 1613111835
+    data2: 595876657
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &8936642026313872284
 MonoBehaviour:
@@ -381,17 +444,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/House/OtherSideOfTheDoor
   Guid:
-    Data1: -1658980024
-    Data2: 1113912788
-    Data3: -195079005
-    Data4: 1688868725
+    Data1: -1421653895
+    Data2: 1174066206
+    Data3: 19993218
+    Data4: 1284690014
   Banks:
   - {fileID: -6341493301577860117}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 0
-  Parameters:
-  - {fileID: 5610230589450591961}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 14500
