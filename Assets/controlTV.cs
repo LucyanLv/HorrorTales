@@ -6,59 +6,46 @@ using UnityEngine;
 
 public class controlTV : MonoBehaviour
 {
-    [SerializeField] FMODUnity.EventReference sonidoCarne;
-    [SerializeField] FMODUnity.EventReference noticiaTV;
+    [SerializeField] GameObject sonidoCarne;
+    [SerializeField] GameObject sonidoNoticia;
+    [SerializeField] GameObject estatica;
 
-    private FMOD.Studio.EventInstance sonidoCarneInstance;
-    private FMOD.Studio.EventInstance noticiaTVInstance;
+    bool estadoNoticia;
 
-    [SerializeField] bool meatSound;
-    [SerializeField] bool notice;
-
- 
     private void Start()
     {
-        meatSound = true;
-        notice = false;
-    }
-    private void Update()
-    {
-        if (meatSound == true)
-        {
-            //sonidoCarne.SetActive(true);
-            sonidoCarneInstance.start();
-        }
-        if (meatSound == false)
-        {
-            sonidoCarneInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            //sonidoCarne.SetActive(false);
-        }
-
-        if (notice == true)
-        {
-            noticiaTVInstance.start();
-        //    noticiaTV.SetActive(true);
-        }
-        if (notice == false)
-        {
-            noticiaTVInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            //   noticiaTV.SetActive(false);
-        }
+        NoticiaApagada();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player"))
+        //Debug.Log("Acá Entré al collider");
+        if (other.gameObject.CompareTag("Player") && Input.GetMouseButtonUp(0) && estadoNoticia == false)
         {
-            meatSound = false;
-            Debug.Log("Si funciona esta parte del sonido");
+            NoticiaPrendida();
+            //Debug.Log("Acá debería prenderse la noticia");
+        }
 
+        else if (other.gameObject.CompareTag("Player") && Input.GetMouseButtonUp(0) && estadoNoticia == true)
+        {
+            NoticiaApagada();
+            //Debug.Log("Acá debería apagarse la noticia");
         }
     }
 
-    private void OnDestroy()
+    public void NoticiaPrendida()
     {
-        noticiaTVInstance.release();
-        sonidoCarneInstance.release();
+        estadoNoticia = true;
+        sonidoCarne.SetActive(false);
+        sonidoNoticia.SetActive(true);
+        estatica.SetActive(true);
+    }
+
+    public void NoticiaApagada()
+    {
+        estadoNoticia = false;
+        sonidoCarne.SetActive(true);
+        sonidoNoticia.SetActive(false);
+        estatica.SetActive(false);
     }
 }
