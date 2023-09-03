@@ -4,4 +4,12 @@
 PresetManager:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_DefaultPresets: {}
+  m_DefaultPresets:
+  - first:
+      m_NativeTypeID: 114
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: Assembly-CSharp::CinematicsSettings
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: bc46bc47ecfb5d648b5a18ae0319c563, type: 2}
+      m_Filter: 
+      m_Disabled: 0

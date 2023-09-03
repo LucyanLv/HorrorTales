@@ -7,7 +7,8 @@ using UnityEngine.Playables;
 public class CinematicController : MonoBehaviour
 {
     PlayableDirector director;
-    [SerializeField] CinematicsSettings settings;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject[] anims;
 
     int currentCinematicIndex;
 
@@ -23,28 +24,47 @@ public class CinematicController : MonoBehaviour
     }
     private void Awake()
     {
-        director = GetComponent<PlayableDirector>();
+        director = anims[0].GetComponent<PlayableDirector>();
     }
 
     public void PlayCinematic(int index)
     {
         currentCinematicIndex = index;
-        director.playableAsset = settings.Cinematics[currentCinematicIndex].Cinematic;
-        string anim = $"Animation_0{currentCinematicIndex}";
+        player.SetActive(false);
+        director = anims[currentCinematicIndex].GetComponent<PlayableDirector>();
+        string anim = $"Animation {anims[currentCinematicIndex].name}";
         Debug.Log($" se supone dara play a {director.playableAsset.name}  y la anim {anim}");
-        GameObject a = GameObject.Find(anim);
+        GameObject a = anims[currentCinematicIndex];
         if (a == null)
         {
             Debug.Log("nnooooooooooo");
         }
-        a.GetComponent<PlayableDirector>().Play();
+        else
+        {
+            a.SetActive(true);
+            director.Play();
+        }
     }
 
     public void CinematicFinished(PlayableDirector director)
     {
 
         DelegatesHelper.cinematicFinished.Invoke(currentCinematicIndex);
-        transform.Find($"Animation_0{currentCinematicIndex}").gameObject.SetActive(false);
+        anims[currentCinematicIndex].SetActive(false);
         Debug.Log("Aqui se llama al controlador de puertas y se activan segun ids");
+        MakeAditionalActions();
+    }
+
+    public void MakeAditionalActions()
+    {
+        switch (currentCinematicIndex)
+        {
+            case 0:
+                player.SetActive(true);
+                break;
+            case 1:
+                player.SetActive(true);
+                break;
+        }
     }
 }

@@ -13,6 +13,7 @@ public class CinematicActivator : MonoBehaviour
         {
             Debug.Log($"player entro en el {gameObject.name}");
             DelegatesHelper.playCinematic.Invoke(cinematicIndex);
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
@@ -21,6 +22,7 @@ public class CinematicActivator : MonoBehaviour
         if (cinematicIndex == index)
         {
             gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
