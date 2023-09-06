@@ -19,10 +19,10 @@ public class CinematicActivator : MonoBehaviour
 
     public void CinematicFinished(int index)
     {
+        Debug.Log($"aca se finaliza {index}");
         if (cinematicIndex == index)
         {
             gameObject.SetActive(false);
-            Destroy(gameObject);
         }
     }
 
@@ -34,5 +34,6 @@ public class CinematicActivator : MonoBehaviour
     private void OnDisable()
     {
         DelegatesHelper.cinematicFinished -= CinematicFinished;
+        
     }
 }

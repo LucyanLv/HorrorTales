@@ -6,7 +6,7 @@ public class Door : MonoBehaviour
     Animator controller;
     [SerializeField] private int id;
     [SerializeField] private bool doorOpened = false;
-    [SerializeField] private bool doorLocked = true;
+    [SerializeField] private bool doorLocked;
     [SerializeField] private float maxInteractDistance = 3f;
     public int Id { get => id; set => id = value; }
 
@@ -19,16 +19,16 @@ public class Door : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Check if the player is close enough and facing the door before allowing interaction
-            if (CanInteractWithDoor())
+            if (CanInteractWithDoor(other.gameObject))
             {
                 doorOpened = !doorOpened;
-                controller.SetBool("Opened", doorOpened);
-                controller.SetBool("Closed", !doorOpened);
+
                 FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
                 if (doorOpened)
                 {
                     StartCoroutine(OpenDoorCoroutine());
-                }
+                }                
+                controller.SetBool("Opened", doorOpened);
             }
             else
             {
@@ -38,13 +38,12 @@ public class Door : MonoBehaviour
 
     }
 
-    private bool CanInteractWithDoor()
+    private bool CanInteractWithDoor(GameObject obj)
     {
-        // Check if the player is tagged as "Player" and within the interactable distance
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null && !doorLocked)
+
+        if (obj.CompareTag("Player") && !doorLocked)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, obj.transform.position);
             return distanceToPlayer <= maxInteractDistance;
         }
         return false;
@@ -56,9 +55,12 @@ public class Door : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/House/OpeningDoor");
     }
 
-    public void unlockDoor()
+    public void UnlockDoor()
     {
         doorLocked = false;
+        doorOpened = false;
+        controller.SetBool("Opened", doorOpened);
+        Debug.Log($" aca desbloquea la puerta {Id} del pivote {gameObject.name}");
         FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
 
     }
