@@ -52,7 +52,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
             isMoving = true;
 
             Vector3 direction = (transform.forward * vertical + transform.right * horizontal).normalized;
-            rigidbody.velocity = direction * movementSpeed;
+           // rigidbody.velocity = direction * movementSpeed;
 
 
 

@@ -12,6 +12,7 @@ public class CinematicController : MonoBehaviour
     [SerializeField] GameObject[] aims;
     [SerializeField] Door[] doors;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject col3;
 
 
     int currentCinematicIndex;
@@ -41,13 +42,12 @@ public class CinematicController : MonoBehaviour
         GameObject a = aims[currentCinematicIndex];
         if (a == null)
         {
-            Debug.Log("nnooooooooooo");
+            Debug.Log("No ewncontro los objetos de la animacion");
         }
         else
         {
             a.SetActive(true);
             director.Play();
-            Debug.Log("aca debio dar play");
         }
     }
 
@@ -56,7 +56,6 @@ public class CinematicController : MonoBehaviour
         Debug.Log("entro al finish");
         DelegatesHelper.cinematicFinished.Invoke(currentCinematicIndex);
         aims[currentCinematicIndex].SetActive(false);
-        Debug.Log("Aqui se llama al controlador de puertas y se activan segun ids");
         MakeAditionalActions();
     }
 
@@ -64,14 +63,14 @@ public class CinematicController : MonoBehaviour
     {
         player.SetActive(true);
         UnlockDoors(settings.Cinematics[currentCinematicIndex].Doors);
-        /*switch (currentCinematicIndex)
+        switch (currentCinematicIndex)
         {
-            case 0:
+            case 2:
+                player.transform.position = new Vector3(377.840332f, 9.91821289e-05f, -81.5740738f);
+                PlayCinematic(0);
+                col3.SetActive(true);
                 break;
-            case 1:
-  
-                break;
-        }*/
+        }
     }
 
     private void UnlockDoors(List<int> doorsIds)

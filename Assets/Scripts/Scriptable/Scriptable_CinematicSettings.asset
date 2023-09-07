@@ -20,7 +20,7 @@ MonoBehaviour:
   - cinematic: {fileID: 11400000, guid: ab6c1d75cf4890e45908c1b7c3330040, type: 2}
     doors: 
   - cinematic: {fileID: 11400000, guid: 3064536a43b480346bb39f033de9683d, type: 2}
-    doors: 
+    doors: 01000000
   - cinematic: {fileID: 11400000, guid: 1299b7b3c29e7aa469e3585e3d1553c5, type: 2}
     doors: 
   - cinematic: {fileID: 11400000, guid: 5c132a701cf1a014e9c5a2ff1bf8285a, type: 2}
