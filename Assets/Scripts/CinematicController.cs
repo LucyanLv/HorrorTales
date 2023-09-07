@@ -70,6 +70,9 @@ public class CinematicController : MonoBehaviour
                 PlayCinematic(0);
                 col3.SetActive(true);
                 break;
+            case 5:
+                Debug.Log("aca se va a la chingada y ya acabo el juego uwu");
+                break;
         }
     }
 
