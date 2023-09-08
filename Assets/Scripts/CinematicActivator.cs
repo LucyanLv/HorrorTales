@@ -11,12 +11,15 @@ public class CinematicActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log($"player entro en el {gameObject.name}");
             DelegatesHelper.playCinematic.Invoke(cinematicIndex);
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
     public void CinematicFinished(int index)
     {
+        Debug.Log($"aca se finaliza {index}");
         if (cinematicIndex == index)
         {
             gameObject.SetActive(false);
@@ -31,5 +34,6 @@ public class CinematicActivator : MonoBehaviour
     private void OnDisable()
     {
         DelegatesHelper.cinematicFinished -= CinematicFinished;
+        
     }
 }

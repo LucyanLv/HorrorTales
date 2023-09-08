@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Scriptable_CinematicSettings
+  m_EditorClassIdentifier: Assembly-CSharp::CinematicsSettings
+  cinematics:
+  - cinematic: {fileID: 11400000, guid: b37ad3c029832b044adb447f1f093f6f, type: 2}
+    doors: 
+  - cinematic: {fileID: 11400000, guid: d082e31cffddf0e4f88a2d9d69c51869, type: 2}
+    doors: 0300000000000000
+  - cinematic: {fileID: 11400000, guid: ab6c1d75cf4890e45908c1b7c3330040, type: 2}
+    doors: 01000000
+  - cinematic: {fileID: 11400000, guid: 3064536a43b480346bb39f033de9683d, type: 2}
+    doors: 0200000007000000
+  - cinematic: {fileID: 11400000, guid: 1299b7b3c29e7aa469e3585e3d1553c5, type: 2}
+    doors: 06000000
+  - cinematic: {fileID: 11400000, guid: 5c132a701cf1a014e9c5a2ff1bf8285a, type: 2}
+    doors: 
+  - cinematic: {fileID: 11400000, guid: 892ec8ec562f36b45b3a83ab91c9fb02, type: 2}
+    doors: 0400000005000000

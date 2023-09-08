@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 //using FMOD.Studio;
 
 public class MovimientoJugadorVideo : MonoBehaviour
@@ -25,7 +26,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-        Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
 
         // Inicializar el evento de pasos
         //footstepEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Character/Footsteps"); // "Footsteps" es el nombre del evento de pasos que creaste en FMOD Studio
@@ -52,21 +53,15 @@ public class MovimientoJugadorVideo : MonoBehaviour
             isMoving = true;
 
             Vector3 direction = (transform.forward * vertical + transform.right * horizontal).normalized;
+            direction.y = rigidbody.velocity.y;
             rigidbody.velocity = direction * movementSpeed;
 
-
+            //Vector3 direction = new Vector3(transform.forward.x * movementSpeed * vertical, rigidbody.velocity.y, transform.forward.z * movementSpeed * horizontal );
+            //rigidbody.velocity = direction;
 
             // Cambiar el valor del parámetro de velocidad del evento de pasos
             float characterSpeed = Mathf.Abs(vertical) + Mathf.Abs(horizontal);
-            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Speed", characterSpeed);
 
-            // Iniciar el evento de pasos (solo si no se está reproduciendo ya)
-            //PLAYBACK_STATE playbackState;
-            //footstepEvent.getPlaybackState(out playbackState);
-            //if (playbackState != PLAYBACK_STATE.PLAYING)
-            //{
-            //    footstepEvent.start();
-            //}
         }
         else if (horizontal == 0 && vertical == 0)
         {

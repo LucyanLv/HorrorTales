@@ -9,8 +9,10 @@ public class controlTV : MonoBehaviour
     [SerializeField] GameObject sonidoCarne;
     [SerializeField] GameObject sonidoNoticia;
     [SerializeField] GameObject estatica;
+    [SerializeField] GameObject colliderAnimacion;
 
     bool estadoNoticia;
+    int contador = 0;
 
     private void Start()
     {
@@ -22,7 +24,8 @@ public class controlTV : MonoBehaviour
         //Debug.Log("Acá Entré al collider");
         if (other.gameObject.CompareTag("Player") && Input.GetMouseButtonUp(0) && estadoNoticia == false)
         {
-            NoticiaPrendida();
+             NoticiaPrendida();
+            contador++;
             //Debug.Log("Acá debería prenderse la noticia");
         }
 
@@ -39,8 +42,19 @@ public class controlTV : MonoBehaviour
         sonidoCarne.SetActive(false);
         sonidoNoticia.SetActive(true);
         estatica.SetActive(true);
+        if (contador<=0)
+        {
+
+            colliderAnimacion.SetActive(true);
+            StartCoroutine(aja());
+        }
     }
 
+    IEnumerator aja()
+    {
+        yield return new WaitForSeconds(5f);
+        colliderAnimacion.SetActive(false);
+    }
     public void NoticiaApagada()
     {
         estadoNoticia = false;
