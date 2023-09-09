@@ -4831,6 +4831,7 @@ GameObject:
   - component: {fileID: 308595809}
   - component: {fileID: 308595811}
   - component: {fileID: 308595810}
+  - component: {fileID: 308595812}
   m_Layer: 8
   m_Name: Linterna (4)
   m_TagString: Untagged
@@ -4886,6 +4887,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.975811, y: 1.3735064, z: 3.236014}
   m_Center: {x: -2.7838387, y: 0.07869024, z: 1.1434443}
+--- !u!114 &308595812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308595808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1353994846
+      Data2: 1234654152
+      Data3: 1392075420
+      Data4: 824214887
+    Path: event:/Ambiente
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: ScaryBackGround
+    Value: 3
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &309565992
 GameObject:
   m_ObjectHideFlags: 0
@@ -41741,7 +41775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &459885486
 Transform:
   m_ObjectHideFlags: 0
@@ -55324,7 +55358,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55288
+  m_Name: pb_Mesh34884
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -57866,8 +57900,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.946252, y: 1.3735064, z: 6.6513553}
-  m_Center: {x: 0.23094103, y: 0.07869029, z: 2.0475752}
+  m_Size: {x: 2.946252, y: 2.168359, z: 6.6513553}
+  m_Center: {x: 0.23094104, y: 0.476117, z: 2.0475752}
 --- !u!114 &902324542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61813,7 +61847,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167811698}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -63808,7 +63842,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287854188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -65209,7 +65243,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54000
+  m_Name: pb_Mesh33596
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -66157,7 +66191,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536839239}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -71106,7 +71140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1756722160
 Transform:
   m_ObjectHideFlags: 0
@@ -71184,7 +71218,7 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params:
   - Name: ScaryBackGround
-    Value: 1
+    Value: 2
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -72853,7 +72887,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861012802}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -74545,7 +74579,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54516
+  m_Name: pb_Mesh34112
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -74898,7 +74932,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980020563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -76818,8 +76852,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2232621007323703999}
-  m_LocalRotation: {x: 0.33638215, y: -0.6219703, z: 0.33638215, w: 0.6219703}
-  m_LocalPosition: {x: 28.160004, y: 21.279995, z: 72.79999}
+  m_LocalRotation: {x: -0.010032206, y: 0, z: 0, w: -0.9999497}
+  m_LocalPosition: {x: 378.2971, y: 24.680256, z: -75.18993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
