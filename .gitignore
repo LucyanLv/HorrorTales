@@ -104,3 +104,7 @@ fmod_editor.log
 # FMOD 1.10.x (Legacy)
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
+
+#scriptable object puertas 
+!D:\GitHub\HorrorTales\Assets\Scripts\Scriptable\Scriptable_CinematicSettings.asset
+!D:\GitHub\HorrorTales\Assets\Scripts\Scriptable\Scriptable_CinematicSettings.asset.meta
