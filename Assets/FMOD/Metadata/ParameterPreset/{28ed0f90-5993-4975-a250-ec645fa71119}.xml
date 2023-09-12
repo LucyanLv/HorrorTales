@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{28ed0f90-5993-4975-a250-ec645fa71119}">
+		<property name="name">
+			<value>sonidosRandom</value>
+		</property>
+		<relationship name="folder">
+			<destination>{089b67a1-5e8d-4df4-90d4-745bd42cc249}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b06c721d-452d-4471-90c9-0da4a3ee2414}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b06c721d-452d-4471-90c9-0da4a3ee2414}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>12</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

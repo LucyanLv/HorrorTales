@@ -15,6 +15,10 @@ public class LinternaUsable : MonoBehaviour
     private float nivelBateria = 100.0f;
     public Slider batterySlider;
 
+    [Header("RecargaBatería")]
+    public float maximoNivelBateria = 100.0f;
+
+
     [Header("Cordura")]
     [SerializeField] private Slider corduraSlider;
     [SerializeField] private float tasaAumentoCordura = 10.0f; // Tasa de aumento de cordura por segundo
@@ -93,7 +97,16 @@ public class LinternaUsable : MonoBehaviour
             linternaTomada = true;
             Destroy(other.gameObject);
         }
+        else if (other.tag == "Bateria")
+        {
+            // Recargar la batería al 100%
+            nivelBateria = maximoNivelBateria;
+            ActualizarSliderBateria();
+            // Puedes destruir el objeto de la batería si lo deseas
+            Destroy(other.gameObject);
+        }
     }
+
 
     private void ActualizarSliderBateria()
     {

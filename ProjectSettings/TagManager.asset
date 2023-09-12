@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Linterna
   - ObjetoLinterna
+  - Bateria
   layers:
   - Default
   - TransparentFX

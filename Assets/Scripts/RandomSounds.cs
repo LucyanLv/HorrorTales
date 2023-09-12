@@ -1,42 +1,57 @@
-using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
+using FMOD.Studio;
 
 public class RandomSounds : MonoBehaviour
 {
-    [SerializeField] int tiempoAleatorioAdicional;
-    [SerializeField] List<string> rutaSonidos = new List<string>();
-    [SerializeField] int tiempoEsperaSonido;
-    [SerializeField] float tiempoTotal;
-    [SerializeField] float tiempoActual;
+    // Referencia al evento de FMOD
+    FMODUnity.EventReference randomSounds;
+    public string fmodEventPath;
 
-    FMODUnity.EventReference sonidosAleatorios;
+    // Parámetro discreto para seleccionar el sonido
+    public string parameterName = "sonidosRandom";
 
-    // Start is called before the first frame update
-    void Start()
+    // Tiempo mínimo y máximo de espera antes de reproducir el sonido
+    public float minWaitTime = 5f;
+    public float maxWaitTime = 10f;
+
+    private FMOD.Studio.EventInstance soundEvent;
+
+    private void Start()
     {
-        tiempoTotal = Random.Range(2, 5);
-        tiempoActual = 0;
+        // Inicializar el evento de FMOD
+        soundEvent = FMODUnity.RuntimeManager.CreateInstance(fmodEventPath);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (tiempoActual < tiempoTotal)
-        {
-            tiempoActual += Time.deltaTime;
-        }
-        else
-        {
-            //AprendePa hahahahaha
+        // Comenzar la rutina para reproducir sonidos aleatorios
+        StartCoroutine(PlayRandomSoundWithDelay());
+    }
 
-            FMOD.Studio.EventInstance sonidoAleatorio = FMODUnity.RuntimeManager.CreateInstance(rutaSonidos[Random.Range(0, rutaSonidos.Count)]);
-            sonidoAleatorio.start();
-            sonidoAleatorio.release();
-            tiempoTotal = Random.Range(15, 30);
-            tiempoActual = 0;
+    private void OnDisable()
+    {
+        // Detener el evento de FMOD cuando el objeto se desactive
+        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+    private IEnumerator PlayRandomSoundWithDelay()
+    {
+        while (true)
+        {
+            // Generar un tiempo de espera aleatorio
+            float randomWaitTime = Random.Range(minWaitTime, maxWaitTime);
+            yield return new WaitForSeconds(randomWaitTime);
+
+            // Seleccionar un valor aleatorio para el parámetro discreto
+            int randomParameterValue = Random.Range(0, 12);
+
+            // Setear el valor del parámetro discreto en FMOD
+            soundEvent.setParameterByName("sonidosRandom", randomParameterValue);
+
+            // Reproducir el sonido
+            soundEvent.start();
         }
     }
 }
