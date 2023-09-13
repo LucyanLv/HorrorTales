@@ -20,7 +20,7 @@ public class patrullaMuerta : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nav = GetComponent<NavMeshAgent>();    
+        nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
     }
@@ -32,8 +32,8 @@ public class patrullaMuerta : MonoBehaviour
         {
             nav.destination = player.transform.position;
             nav.speed = speedChase;
-            
-            if(nav.velocity == Vector3.zero)
+
+            if (nav.velocity == Vector3.zero)
             {
                 anim.SetBool("walk", false);
             }
@@ -48,7 +48,7 @@ public class patrullaMuerta : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             playerNear = true;
         }
@@ -74,21 +74,12 @@ public class patrullaMuerta : MonoBehaviour
 
             if (patrolTimer > patrolWaitingTime)
             {
-                if (wayPointsIndex == wayPoints.Length - 1)
-                {
-                    wayPointsIndex = 0;
-                }
-                else
-                {
-                    patrolTimer = 0;
-                }
-            }
-
-            else
-            {
+                wayPointsIndex = (wayPointsIndex + 1) % wayPoints.Length; // Avanza al siguiente punto de patrulla
                 patrolTimer = 0;
             }
+
             nav.destination = wayPoints[wayPointsIndex].position;
         }
-    }    
+    }
+
 }
