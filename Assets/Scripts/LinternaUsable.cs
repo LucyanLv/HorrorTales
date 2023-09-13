@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LinternaUsable : MonoBehaviour
 {
+    Chase chase;
+
     [Header("LinternaAccion")]
     [SerializeField] GameObject linterna;
     public bool linternaTomada = false;
@@ -21,10 +24,14 @@ public class LinternaUsable : MonoBehaviour
 
     [Header("Cordura")]
     [SerializeField] private Slider corduraSlider;
-    [SerializeField] private float tasaAumentoCordura = 10.0f; // Tasa de aumento de cordura por segundo
-    [SerializeField] private float tasaDescensoCordura = 5.0f; // Tasa de descenso de cordura por segundo
-    private float nivelCordura = 0.0f; // Valor inicial de la cordura
+    [SerializeField] private float tasaAumentoCordura = 10.0f;
+    [SerializeField] private float tasaDescensoCordura = 5.0f;
+    private float nivelCordura = 0.0f;
 
+    [Header("Fear")]
+    [SerializeField] GameObject fearLevel1;
+    [SerializeField] GameObject fearLevel2;
+    [SerializeField] GameObject fearLevel3;
 
     private void Start()
     {
@@ -34,6 +41,7 @@ public class LinternaUsable : MonoBehaviour
         // Iniciar el contador de cordura en 100%
         nivelCordura = 100.0f;
         ActualizarSliderCordura();
+        chase = GetComponent<Chase>();
     }
 
     private void Update()
@@ -51,6 +59,7 @@ public class LinternaUsable : MonoBehaviour
 
                 // Aumentar la cordura mientras la linterna esté encendida
                 nivelCordura = Mathf.Min(100.0f, nivelCordura + Time.deltaTime * tasaAumentoCordura);
+
             }
             else
             {
@@ -74,6 +83,44 @@ public class LinternaUsable : MonoBehaviour
                 }
             }
         }
+
+        if (nivelCordura <= 75.0f)
+        {
+            Debug.Log("Locura al 75");
+            fearLevel1.SetActive(true);
+
+
+            if (nivelCordura <= 50.0f)
+            {
+                Debug.Log("Locura en 50");
+                fearLevel2.SetActive(true);
+
+                if (nivelCordura <= 25.0f)
+                {
+                    Debug.Log("Locura al 25");
+                    fearLevel3.SetActive(true);
+                }
+            }
+        }
+
+        if (nivelCordura >= 25.0f)
+        {
+            Debug.Log("Locura recuperada al 25");
+            fearLevel3.SetActive(false);
+
+            if (nivelCordura >= 50.0f)
+            {
+                Debug.Log("Locura en 50");
+                fearLevel2.SetActive(false);
+
+                if (nivelCordura >= 75)
+                {
+                    Debug.Log("Locura recuperada al 75");
+                    fearLevel1.SetActive(false);
+                }
+            }
+        }
+
     }
 
 
