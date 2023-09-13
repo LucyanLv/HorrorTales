@@ -500,7 +500,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3669705401824211119}
-  m_LocalRotation: {x: 0.120926715, y: 0.7349984, z: -0.100759484, w: 0.6595465}
+  m_LocalRotation: {x: -0.34881437, y: 0.65816, z: -0.4795527, w: 0.46387842}
   m_LocalPosition: {x: 0.022848845, y: 0.55610394, z: -0.0013505558}
   m_LocalScale: {x: 1.0000007, y: 1.0000012, z: 1.0000006}
   m_ConstrainProportionsScale: 0
@@ -508,7 +508,7 @@ Transform:
   - {fileID: 3808159778401376436}
   m_Father: {fileID: 4494928564041943266}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.916, y: 96.62, z: -71.83}
 --- !u!1 &3712405242180021030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7470363729963148497}
   - component: {fileID: 3552281203653983915}
+  - component: {fileID: 4780407347955083437}
   m_Layer: 0
   m_Name: Mujer Fantasma
   m_TagString: Untagged
@@ -1408,7 +1409,7 @@ Transform:
   - {fileID: 7954232206933617162}
   - {fileID: 1232167412089739462}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3552281203653983915
 Animator:
@@ -1420,7 +1421,7 @@ Animator:
   m_GameObject: {fileID: 7847452630654271083}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 68a50b10830a1654ba2c482201867c5c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33c6d41916683ac4a950008e8c3ad051, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1430,6 +1431,69 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &4780407347955083437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847452630654271083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 3094877935125171007}
+  - {fileID: 1302813301684794327}
+  - {fileID: 6115934754167787609}
+  - {fileID: 816015856383285888}
+  - {fileID: 5961696355325187654}
+  - {fileID: 9043194113423272018}
+  - {fileID: 3859481915020100815}
+  - {fileID: 6016251329730342597}
+  - {fileID: 7524931672413477764}
+  - {fileID: 8247676462955322321}
+  - {fileID: 633769981275766292}
+  - {fileID: 7201018317483973767}
+  - {fileID: 7572835298908238785}
+  - {fileID: 3381452339425885193}
+  - {fileID: 4686998396321217205}
+  - {fileID: 6374098146732060135}
+  - {fileID: 8454169919610836460}
+  - {fileID: 2557458200839417745}
+  - {fileID: 4494928564041943266}
+  - {fileID: 4112797162095348833}
+  - {fileID: 3808159778401376436}
+  - {fileID: 4593491343441742777}
+  - {fileID: 6891899850287162618}
+  - {fileID: 6975981233757728728}
+  - {fileID: 1052818370306418670}
+  - {fileID: 4089078693919180187}
+  - {fileID: 1034091544076237081}
+  - {fileID: 4420674225167038823}
+  - {fileID: 9105977261310551308}
+  - {fileID: 1853253408265901786}
+  - {fileID: 6640428281648971336}
+  - {fileID: 5507213885146400456}
+  - {fileID: 7566762399505240821}
+  - {fileID: 514997867506414517}
+  - {fileID: 5937560492509510396}
+  - {fileID: 2797736379619254793}
+  - {fileID: 5670556410249927606}
+  - {fileID: 281192632880378738}
+  - {fileID: 5331478572332240518}
+  - {fileID: 6393933840003160272}
+  - {fileID: 5013811329018801570}
+  - {fileID: 2066700400727246368}
+  - {fileID: 5530466464536995425}
+  - {fileID: 8168133211261069207}
 --- !u!1 &7992243355953570124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1613,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8252201828457197700}
-  m_LocalRotation: {x: 0.12092654, y: -0.7349986, z: 0.10075967, w: 0.6595463}
+  m_LocalRotation: {x: -0.31528157, y: -0.6748657, z: 0.45562267, w: 0.4874032}
   m_LocalPosition: {x: -0.022849344, y: 0.5561034, z: -0.0013466516}
   m_LocalScale: {x: 0.9999999, y: 1.0000008, z: 0.99999976}
   m_ConstrainProportionsScale: 0
@@ -1557,7 +1621,7 @@ Transform:
   - {fileID: 4686998396321217205}
   m_Father: {fileID: 7572835298908238785}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.916, y: -96.62, z: 66.066}
 --- !u!1 &8383467262299544427
 GameObject:
   m_ObjectHideFlags: 0
