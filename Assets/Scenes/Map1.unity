@@ -83037,6 +83037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a82639fdef0094fb5ef32c0e33b818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bateria: {fileID: 0}
 --- !u!4 &1956889235
 Transform:
   m_ObjectHideFlags: 0
@@ -88125,6 +88126,7 @@ MonoBehaviour:
   fearLevel1: {fileID: 48592165}
   fearLevel2: {fileID: 1085005632}
   fearLevel3: {fileID: 1641415689}
+  heartSoundEventPath: event:/Character/Heart
 --- !u!4 &8125922611073275978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7201018317483973767, guid: 834b56cbbb39e3f448307aa4017bc047, type: 3}
