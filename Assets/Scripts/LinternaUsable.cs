@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LinternaUsable : MonoBehaviour
 {
-    Chase chase;
+
 
     [Header("LinternaAccion")]
     [SerializeField] GameObject linterna;
@@ -41,7 +41,6 @@ public class LinternaUsable : MonoBehaviour
         // Iniciar el contador de cordura en 100%
         nivelCordura = 100.0f;
         ActualizarSliderCordura();
-        chase = GetComponent<Chase>();
     }
 
     private void Update()
@@ -88,17 +87,31 @@ public class LinternaUsable : MonoBehaviour
         {
             Debug.Log("Locura al 75");
             fearLevel1.SetActive(true);
-
+            //GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.15f);
+            foreach(Chase item in GameObject.FindObjectsOfType<Chase>())
+            {
+                item.AddActivationProbability(15);
+            }
 
             if (nivelCordura <= 50.0f)
             {
                 Debug.Log("Locura en 50");
                 fearLevel2.SetActive(true);
+               // GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.15f);
+                foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
+                {
+                    item.AddActivationProbability(15);
+                }
 
                 if (nivelCordura <= 25.0f)
                 {
                     Debug.Log("Locura al 25");
                     fearLevel3.SetActive(true);
+                 // GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.20f);
+                    foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
+                    {
+                        item.AddActivationProbability(20);
+                    }
                 }
             }
         }
@@ -107,16 +120,30 @@ public class LinternaUsable : MonoBehaviour
         {
             Debug.Log("Locura recuperada al 25");
             fearLevel3.SetActive(false);
+            //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.20f);
+            foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
+            {
+                item.MinusActivationProbability(20);
+            }
 
             if (nivelCordura >= 50.0f)
             {
                 Debug.Log("Locura en 50");
                 fearLevel2.SetActive(false);
-
+                //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
+                foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
+                {
+                    item.MinusActivationProbability(20);
+                }
                 if (nivelCordura >= 75)
                 {
                     Debug.Log("Locura recuperada al 75");
                     fearLevel1.SetActive(false);
+                    //   GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
+                    foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
+                    {
+                        item.MinusActivationProbability(20);
+                    }
                 }
             }
         }

@@ -5,13 +5,29 @@ using UnityEngine;
 public class Chase : MonoBehaviour
 {
     public GameObject enemyToActivate;
-    public float activationProbability = 0.25f;
+    public float activationProbability;
+
+    public float GetActivationProbability()
+    {
+        return activationProbability;
+    }
+
+    public void AddActivationProbability(float activationProbability)
+    {
+        this.activationProbability = (this.activationProbability + activationProbability) >= 100? 100 : activationProbability + this.activationProbability;
+    }
+
+    public void MinusActivationProbability(float activationProbability)
+    {
+        this.activationProbability = (this.activationProbability - activationProbability) <= 0 ? 0 : activationProbability - this.activationProbability;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            float randomValue = Random.value;
+            float randomValue = Random.Range(0, 101);
 
             if (randomValue <= activationProbability)
             {
