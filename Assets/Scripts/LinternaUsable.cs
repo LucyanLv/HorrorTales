@@ -47,6 +47,23 @@ public class LinternaUsable : MonoBehaviour
         nivelCordura = 100.0f;
         ActualizarSliderCordura();
         heartSoundEvent = FMODUnity.RuntimeManager.CreateInstance(heartSoundEventPath);
+        corduraSlider.onValueChanged.AddListener(ActualizarNivelCordura);
+
+
+    }
+    private void ActualizarNivelCordura(float value)
+    {
+        float a = 100 - (nivelCordura * 60); // Actualizar el valor de la variable basado en el Slider
+
+        Debug.Log("Locura al actualizar nivel locura");
+        fearLevel1.SetActive(a <= 75);
+        fearLevel2.SetActive(a <= 50);
+        fearLevel3.SetActive(a <= 25);
+        //GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.15f);
+        foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
+        {
+            item.AddActivationProbability(a);
+        }
     }
 
     private void Update()
@@ -91,22 +108,12 @@ public class LinternaUsable : MonoBehaviour
 
         if (nivelCordura <= 75.0f)
         {
-            Debug.Log("Locura al 75");
-            fearLevel1.SetActive(true);
-            //GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.15f);
-            foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
-            {
-                item.AddActivationProbability(15);
-            }
 
             if (nivelCordura <= 50.0f)
             {
-                Debug.Log("Locura en 50");
-                fearLevel2.SetActive(true);
-                // GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.15f);
+
                 if (nivelCordura <= 50.0f)
                 {
-                    // Reproducir el sonido de latidos del corazón en un loop
                     if (!heartSoundEvent.isValid())
                     {
                         heartSoundEvent = FMODUnity.RuntimeManager.CreateInstance(heartSoundEventPath);
@@ -114,63 +121,47 @@ public class LinternaUsable : MonoBehaviour
                     }
                 }
 
-                    foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
-                    {
-                        item.AddActivationProbability(15);
-                    }
 
-                    if (nivelCordura <= 25.0f)
-                    {
-                        Debug.Log("Locura al 25");
-                        fearLevel3.SetActive(true);
-                        // GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.20f);
-                        foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
-                        {
-                            item.AddActivationProbability(20);
-                        }
-                    }
+                if (nivelCordura <= 25.0f)
+                {
+                    Debug.Log("Locura al 25");
+                    fearLevel3.SetActive(true);
+                    // GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.20f);
+
                 }
             }
+        }
 
-            if (nivelCordura >= 25.0f)
+        if (nivelCordura >= 25.0f)
+        {
+            Debug.Log("Locura recuperada al 25");
+            fearLevel3.SetActive(false);
+            //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.20f);
+
+
+            if (nivelCordura >= 50.0f)
             {
-                Debug.Log("Locura recuperada al 25");
-                fearLevel3.SetActive(false);
-                //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.20f);
-                foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
-                {
-                    item.MinusActivationProbability(20);
-                }
+                Debug.Log("Locura en 50");
+                fearLevel2.SetActive(false);
+                //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
 
-                if (nivelCordura >= 50.0f)
+                if (nivelCordura >= 75)
                 {
-                    Debug.Log("Locura en 50");
-                    fearLevel2.SetActive(false);
-                    //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
-                    foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
-                    {
-                        item.MinusActivationProbability(20);
-                    }
-                    if (nivelCordura >= 75)
-                    {
-                        Debug.Log("Locura recuperada al 75");
-                        fearLevel1.SetActive(false);
+                    Debug.Log("Locura recuperada al 75");
+                    fearLevel1.SetActive(false);
                     //   GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
                     if (heartSoundEvent.isValid())
                     {
                         heartSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                         heartSoundEvent.release();
                     }
-                        foreach (Chase item in GameObject.FindObjectsOfType<Chase>())
-                        {
-                            item.MinusActivationProbability(20);
-                        }
-                    }
+
                 }
             }
-
         }
-    
+
+    }
+
 
 
     private void prenderLinterna()

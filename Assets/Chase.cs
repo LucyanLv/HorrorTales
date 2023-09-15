@@ -14,14 +14,9 @@ public class Chase : MonoBehaviour
 
     public void AddActivationProbability(float activationProbability)
     {
-        this.activationProbability = (this.activationProbability + activationProbability) >= 100? 100 : activationProbability + this.activationProbability;
+        Debug.Log($"ACA SE VE LA PROBABILIDAD {activationProbability}");
+        this.activationProbability = activationProbability >= 100 ? 100 : activationProbability <= 0 ? 0 : activationProbability;
     }
-
-    public void MinusActivationProbability(float activationProbability)
-    {
-        this.activationProbability = (this.activationProbability - activationProbability) <= 0 ? 0 : activationProbability - this.activationProbability;
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
