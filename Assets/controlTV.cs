@@ -24,7 +24,7 @@ public class controlTV : MonoBehaviour
         //Debug.Log("Acá Entré al collider");
         if (other.gameObject.CompareTag("Player") && Input.GetMouseButtonUp(0) && estadoNoticia == false)
         {
-             NoticiaPrendida();
+            NoticiaPrendida();
             contador++;
             //Debug.Log("Acá debería prenderse la noticia");
         }
@@ -42,7 +42,7 @@ public class controlTV : MonoBehaviour
         sonidoCarne.SetActive(false);
         sonidoNoticia.SetActive(true);
         estatica.SetActive(true);
-        if (contador<=0)
+        if (contador <= 0)
         {
 
             colliderAnimacion.SetActive(true);
