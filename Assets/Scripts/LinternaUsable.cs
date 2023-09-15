@@ -53,7 +53,7 @@ public class LinternaUsable : MonoBehaviour
     }
     private void ActualizarNivelCordura(float value)
     {
-        float a = 100 - (nivelCordura * 60); // Actualizar el valor de la variable basado en el Slider
+        float a = 100 - (nivelCordura/2); // Actualizar el valor de la variable basado en el Slider
 
         Debug.Log("Locura al actualizar nivel locura");
         fearLevel1.SetActive(a <= 75);

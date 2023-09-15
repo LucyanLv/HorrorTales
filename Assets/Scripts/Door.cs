@@ -45,7 +45,7 @@ public class Door : MonoBehaviour
             {
                 doorOpened = !doorOpened;
 
-                FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/House/DoorClosed");
                 if (doorOpened)
                 {
                     StartCoroutine(OpenDoorCoroutine());
@@ -57,7 +57,7 @@ public class Door : MonoBehaviour
             }
             else
             {
- //               FMODUnity.RuntimeManager.PlayOneShot("event:/House/UnlookDoor");
+                
             }
         }
     }
