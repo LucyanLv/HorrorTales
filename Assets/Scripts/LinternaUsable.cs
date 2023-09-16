@@ -12,10 +12,11 @@ public class LinternaUsable : MonoBehaviour
     [SerializeField] GameObject linterna;
     public bool linternaTomada = false;
     private bool linternaEncendida = false;
+    [SerializeField] GameObject nuevaLinterna;
 
     [Header("Linterna")]
     [SerializeField] private float linternaAgotadaEn = 60.0f;
-    private float nivelBateria = 100.0f;
+    private float nivelBateria = 10.0f;
     public Slider batterySlider;
 
     [Header("RecargaBatería")]
@@ -49,7 +50,7 @@ public class LinternaUsable : MonoBehaviour
         heartSoundEvent = FMODUnity.RuntimeManager.CreateInstance(heartSoundEventPath);
         corduraSlider.onValueChanged.AddListener(ActualizarNivelCordura);
 
-
+        nuevaLinterna.SetActive(false);
     }
     private void ActualizarNivelCordura(float value)
     {
@@ -183,6 +184,7 @@ public class LinternaUsable : MonoBehaviour
         {
             linternaTomada = true;
             Destroy(other.gameObject);
+            nuevaLinterna.SetActive(true);
         }
         else if (other.tag == "Bateria")
         {

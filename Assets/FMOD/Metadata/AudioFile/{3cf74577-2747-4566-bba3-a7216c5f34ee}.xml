@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3cf74577-2747-4566-bba3-a7216c5f34ee}">
+		<property name="assetPath">
+			<value>womanGhostSound.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>44</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{be6c7ab7-c19e-4306-9515-62cc69b6f25a}</destination>
+		</relationship>
+	</object>
+</objects>
