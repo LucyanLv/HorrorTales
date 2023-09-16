@@ -20,7 +20,7 @@ public class ControladorSonido : MonoBehaviour
         eventoInstance = RuntimeManager.CreateInstance(eventoFMOD);
 
         // Obtiene la instancia del parámetro "Volumen".
-        eventoInstance.getParameterByName("Volumen", out volumenParameter);
+//        eventoInstance.getParameterByName("Volumen", out volumenParameter);
 
         // Comienza a reproducir el evento.
         eventoInstance.start();
@@ -41,7 +41,7 @@ public class ControladorSonido : MonoBehaviour
             float valorVolumen = Mathf.Lerp(100f, 0f, distancia / colliderGrande.bounds.extents.magnitude);
 
             // Actualiza el parámetro "Volumen" en FMOD en tiempo real.
-            volumenParameter.setValue(valorVolumen);
+            //volumenParameter.setValue(valorVolumen);
         }
         else
         {
