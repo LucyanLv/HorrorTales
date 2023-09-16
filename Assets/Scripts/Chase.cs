@@ -14,7 +14,6 @@ public class Chase : MonoBehaviour
 
     public void AddActivationProbability(float activationProbability)
     {
-        Debug.Log($"ACA SE VE LA PROBABILIDAD {activationProbability}");
         this.activationProbability = activationProbability >= 100 ? 100 : activationProbability <= 0 ? 0 : activationProbability;
     }
 

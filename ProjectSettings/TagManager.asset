@@ -10,6 +10,7 @@ TagManager:
   - Linterna
   - ObjetoLinterna
   - Bateria
+  - Room
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - PaderesCasa
   - AnimationLaunchers
-  - LightOn
+  - Rooms
   - LightOff
   - Muerta
   - 
