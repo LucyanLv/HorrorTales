@@ -5,45 +5,24 @@ using UnityEngine;
 public class PuzzlePart : MonoBehaviour
 {
     [SerializeField] private float id;
-    private AudioSource audioSource;
-    private SpriteRenderer[] imgs;
-    private bool aumentado = false;
+    private bool collected = false;
     public float Id { get => id; set => id = value; }
-    public float zoomin;
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-         imgs = GetComponentsInChildren<SpriteRenderer>();
-    }
-    public void wasClicked()
-    {
-        Debug.Log($"111_{Id}");
-        GameObject.Find($"111_{Id}").GetComponent<SpriteRenderer>().enabled = true;
-        Debug.Log($"111_{Id} mostrarse {GameObject.Find($"111_{Id}").GetComponent<SpriteRenderer>().enabled}");
-        audioSource.Play();
-        rotatePart();
-        
-    }
+    public bool Collected { get => collected; set => collected = value; }
 
-    private void Update()
+    public float zoomin;
+
+    [SerializeField] GameObject image;
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if (aumentado)
-        {
-            transform.Rotate(Vector3.up * 0.5f);
-            if (Input.GetMouseButtonDown(0))
-            {
-                //TODO ANIMACION DE DESAPARECER
-                Destroy(this.gameObject);
-            }
-        }
-    }
-    private void rotatePart()
-    {
-        aumentado = true;
-        transform.Rotate(-90,transform.rotation.y, transform.rotation.z);
-        Vector3 pos = new Vector3(Screen.width / 2, Screen.height / 2, 0.7f);
-            transform.position = Camera.main.ScreenToWorldPoint(pos);
-            transform.localScale *= zoomin;
-       
+        image.SetActive(true);
+        collected = true;
+        GameObject.Find("Recollected").GetComponent<UnityEngine.UI.Image>().overrideSprite = image.GetComponent<UnityEngine.UI.Image>().sprite;
+        GameObject.Find("Recollected").GetComponent<UnityEngine.UI.Image>().enabled = true;
+        GameObject.Find("Recollected").SetActive(true);
+        GetComponent<MeshRenderer>().enabled = false;
+        GameObject.FindObjectOfType<PhotoPuzzleController>().ValidateCollected();
+        // ACA VA TODO LO DE FMOD PARA HACER SONAR LA AGARRADA
+
     }
 }
