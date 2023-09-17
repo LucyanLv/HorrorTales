@@ -8,6 +8,7 @@ public class SpawnBaterias : MonoBehaviour
     public LayerMask capasHabitacion;
     [SerializeField] public List<GameObject> rooms = new List<GameObject>();
     [SerializeField] public Dictionary<GameObject, GameObject[]> neigthborgRooms = new Dictionary<GameObject, GameObject[]>();
+    [SerializeField] public Dictionary<GameObject, Vector3[]> pointsBateryinRoom = new Dictionary<GameObject, Vector3[]>();
 
     private void Start()
     {
@@ -20,6 +21,16 @@ public class SpawnBaterias : MonoBehaviour
         neigthborgRooms[rooms[6]] = new GameObject[] { rooms[7], rooms[8] };
         neigthborgRooms[rooms[7]] = new GameObject[] { rooms[5], rooms[6] };
         neigthborgRooms[rooms[8]] = new GameObject[] { rooms[6] };
+
+        pointsBateryinRoom[rooms[0]] = new Vector3[] { new Vector3(374.100006f, 126.841339f, -151.6669922f), new Vector3(402.200012f, 126.841339f, 88.2000008f), new Vector3(394.100006f, 126.841339f, -401.8999996f) };
+        pointsBateryinRoom[rooms[1]] = new Vector3[] { new Vector3(101, 126.841339f, -18), new Vector3(124, 126.841339f, 101), new Vector3(85, 126.841339f, 194) };
+        pointsBateryinRoom[rooms[2]] = new Vector3[] { new Vector3(14.6000004f, 126.841339f, 148.199997f), new Vector3(-46, 126.841339f, 209.699997f), new Vector3(-143.699997f, 126.841339f, 144.600006f) };
+        pointsBateryinRoom[rooms[3]] = new Vector3[] { new Vector3(-169, 126.841339f, 76), new Vector3(-72, 126.841339f, 57), new Vector3(1, 126.841339f, 67) };
+        pointsBateryinRoom[rooms[4]] = new Vector3[] { new Vector3(-72.5f, 126.841339f, -2.5999999f) };
+        pointsBateryinRoom[rooms[5]] = new Vector3[] { new Vector3(-231, 126.841339f, 213), new Vector3(-233, 126.841339f, -26) };
+        pointsBateryinRoom[rooms[6]] = new Vector3[] { new Vector3(-423, 126.841339f, 70) };
+        pointsBateryinRoom[rooms[7]] = new Vector3[] { new Vector3(-476, 126.841339f, 235.600006f), new Vector3(-298.200012f, 126.841339f, 192.800003f) };
+        pointsBateryinRoom[rooms[8]] = new Vector3[] { new Vector3(-350, 126.841339f, -12) };
     }
 
     private void Update()
@@ -35,41 +46,12 @@ public class SpawnBaterias : MonoBehaviour
 
     private Vector3 ObtenerPosicionEnVecinoAleatorio(Vector3 position)
     {
-        BoxCollider boxCollider = ObtenerVecinoAleatorio(position).GetComponent<BoxCollider>();
+        GameObject vecino = ObtenerVecinoAleatorio(position);
+        int indiceAleatorio = Random.Range(0, pointsBateryinRoom[vecino].Length);
+        Vector3 nuevoPunto = pointsBateryinRoom[vecino][indiceAleatorio];
 
-        float randomX = Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x);
-        float randomY = Random.Range(boxCollider.bounds.min.y + boxCollider.bounds.max.y / 5, boxCollider.bounds.max.y / 2);
-        float randomZ = Random.Range(boxCollider.bounds.min.z, boxCollider.bounds.max.z);
-
-        Vector3 puntoAleatorio = new Vector3(randomX, randomY, randomZ);
-
-        //float radioVerificacion = 0.5f; // Ajusta según el tamaño de tu objeto (batería)
-
-        /* while (true)
-         {
-             bool puntoLibre = true;
-
-             Collider[] colliders = Physics.OverlapSphere(puntoAleatorio, radioVerificacion);
-
-             foreach (var collider in colliders)
-             {
-                 // Si hay otro objeto en el punto aleatorio, no está libre
-                 puntoLibre = false;
-                 break;
-             }
-
-             if (puntoLibre) 
-                 break;
-
-             // Generar un nuevo punto aleatorio
-             randomX = Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x);
-             randomY = Random.Range(boxCollider.bounds.min.y, boxCollider.bounds.max.y/2);
-             randomZ = Random.Range(boxCollider.bounds.min.z, boxCollider.bounds.max.z);
-
-             puntoAleatorio = new Vector3(randomX, randomY, randomZ);
-         }*/
-
-        return puntoAleatorio;
+        Debug.Log(nuevoPunto);
+        return nuevoPunto;
 
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0023665675, g: 0.0024662723, b: 0.0025034163, a: 1}
+  m_IndirectSpecularColor: {r: 0.0023716579, g: 0.002471831, b: 0.002508812, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3166,7 +3166,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33942
+  m_Name: pb_Mesh33952
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -42315,6 +42315,11 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!1 &369311809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3151942415038150427, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
+  m_PrefabInstance: {fileID: 3151942415672999155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &370926964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44118,7 +44123,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34638
+  m_Name: pb_Mesh34676
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -66008,7 +66013,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35590
+  m_Name: pb_Mesh35554
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -94251,7 +94256,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a82639fdef0094fb5ef32c0e33b818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bateria: {fileID: 0}
+  bateria: {fileID: 369311809}
+  capasHabitacion:
+    serializedVersion: 2
+    m_Bits: 256
+  rooms:
+  - {fileID: 1562491382}
+  - {fileID: 902324539}
+  - {fileID: 1255329582}
+  - {fileID: 1756722159}
+  - {fileID: 1944275587}
+  - {fileID: 628162347}
+  - {fileID: 1536156414}
+  - {fileID: 308595808}
+  - {fileID: 273647224}
 --- !u!4 &1956889235
 Transform:
   m_ObjectHideFlags: 0
