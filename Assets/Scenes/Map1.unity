@@ -52575,32 +52575,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
   m_PrefabInstance: {fileID: 3151942415672999155}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &645467120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369311809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a82639fdef0094fb5ef32c0e33b818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bateria: {fileID: 369311809}
-  capasHabitacion:
-    serializedVersion: 2
-    m_Bits: 256
-  rooms:
-  - {fileID: 1562491382}
-  - {fileID: 902324539}
-  - {fileID: 1255329582}
-  - {fileID: 1756722159}
-  - {fileID: 1944275587}
-  - {fileID: 628162347}
-  - {fileID: 1536156414}
-  - {fileID: 308595808}
-  - {fileID: 273647224}
 --- !u!1001 &647068360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71077,7 +71051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 341.91998
+      value: 269.3
       objectReference: {fileID: 0}
     - target: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -71085,7 +71059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -137.92
+      value: -214
       objectReference: {fileID: 0}
     - target: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -71121,10 +71095,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 931993226}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3151942415038150427, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1080356372}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
 --- !u!1 &1080356370 stripped
 GameObject:
@@ -71136,32 +71107,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
   m_PrefabInstance: {fileID: 1080356369}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1080356372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080356370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a82639fdef0094fb5ef32c0e33b818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bateria: {fileID: 1080356370}
-  capasHabitacion:
-    serializedVersion: 2
-    m_Bits: 256
-  rooms:
-  - {fileID: 1562491382}
-  - {fileID: 902324539}
-  - {fileID: 1255329582}
-  - {fileID: 1756722159}
-  - {fileID: 1944275587}
-  - {fileID: 628162347}
-  - {fileID: 1536156414}
-  - {fileID: 308595808}
-  - {fileID: 273647224}
 --- !u!4 &1083124345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3235414894122050907, guid: 5bddc822ee940c544ad9cba4aed6dcf6, type: 3}
@@ -99430,7 +99375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1956889234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99443,7 +99388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a82639fdef0094fb5ef32c0e33b818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bateria: {fileID: 369311809}
+  baterias:
+  - {fileID: 369311809}
+  - {fileID: 1080356370}
   capasHabitacion:
     serializedVersion: 2
     m_Bits: 256
@@ -103159,10 +103106,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3151942415038150431, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1877240294}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3151942415038150427, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 645467120}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b94e537bfd8400645b010af69c28bcf6, type: 3}
 --- !u!4 &3212587726357237620 stripped
 Transform:

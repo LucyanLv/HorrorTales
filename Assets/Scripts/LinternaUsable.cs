@@ -190,7 +190,7 @@ public class LinternaUsable : MonoBehaviour
             // Puedes destruir el objeto de la batería si lo deseas
             //Destroy(other.gameObject);
             Debug.Log($"aca vamos pal respaun {other.gameObject.name}");
-            other.gameObject.GetComponentInParent<SpawnBaterias>().RespawnBateria(transform.position);
+            GameObject.Find("ControladorBatería").GetComponentInParent<SpawnBaterias>().RespawnBateria(transform.position);
         }
     }
 
