@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -125,7 +126,6 @@ public class LinternaUsable : MonoBehaviour
 
                 if (nivelCordura <= 25.0f)
                 {
-                    Debug.Log("Locura al 25");
                     fearLevel3.SetActive(true);
                     // GameObject.FindObjectOfType<Chase>().AddActivationProbability(0.20f);
 
@@ -135,22 +135,18 @@ public class LinternaUsable : MonoBehaviour
 
         if (nivelCordura >= 25.0f)
         {
-            Debug.Log("Locura recuperada al 25");
             fearLevel3.SetActive(false);
             //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.20f);
 
 
             if (nivelCordura >= 50.0f)
             {
-                Debug.Log("Locura en 50");
                 fearLevel2.SetActive(false);
                 //GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
 
                 if (nivelCordura >= 75)
                 {
-                    Debug.Log("Locura recuperada al 75");
                     fearLevel1.SetActive(false);
-                    //   GameObject.FindObjectOfType<Chase>().MinusActivationProbability(0.15f);
                     if (heartSoundEvent.isValid())
                     {
                         heartSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -192,10 +188,13 @@ public class LinternaUsable : MonoBehaviour
             nivelBateria = maximoNivelBateria;
             ActualizarSliderBateria();
             // Puedes destruir el objeto de la batería si lo deseas
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            Debug.Log($"aca vamos pal respaun {other.gameObject.name}");
+            other.gameObject.GetComponentInParent<SpawnBaterias>().RespawnBateria(transform.position);
         }
     }
 
+    
 
     private void ActualizarSliderBateria()
     {

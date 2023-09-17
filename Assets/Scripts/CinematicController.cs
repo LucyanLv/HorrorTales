@@ -38,7 +38,6 @@ public class CinematicController : MonoBehaviour
         currentCinematicIndex = index;
         player.SetActive(false);
         director.playableAsset = settings.Cinematics[currentCinematicIndex].Cinematic;
-        Debug.Log($" se supone dara play a {director.playableAsset.name} ");
         GameObject a = aims[currentCinematicIndex];
         if (a == null)
         {
@@ -53,7 +52,6 @@ public class CinematicController : MonoBehaviour
 
     public void CinematicFinished(PlayableDirector director)
     {
-        Debug.Log("entro al finish");
         DelegatesHelper.cinematicFinished.Invoke(currentCinematicIndex);
         aims[currentCinematicIndex].SetActive(false);
         MakeAditionalActions();
