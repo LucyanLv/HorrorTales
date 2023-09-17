@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnBaterias : MonoBehaviour
 {
-    [SerializeField] GameObject bateria;
+    [SerializeField] GameObject[] baterias;
     public LayerMask capasHabitacion;
     [SerializeField] public List<GameObject> rooms = new List<GameObject>();
     [SerializeField] public Dictionary<GameObject, GameObject[]> neigthborgRooms = new Dictionary<GameObject, GameObject[]>();
@@ -41,12 +41,16 @@ public class SpawnBaterias : MonoBehaviour
 
     public void RespawnBateria(Vector3 position)
     {
-        bateria.transform.position = ObtenerPosicionEnVecinoAleatorio(position);
+        GameObject[] vecinos = ObtenerVecinos(position);
+        for (int i = 0; i < vecinos.Length; i++)
+        {
+            baterias[i].transform.position = ObtenerPosicionEnVecino(vecinos[i]);
+        }
     }
 
-    private Vector3 ObtenerPosicionEnVecinoAleatorio(Vector3 position)
+    private Vector3 ObtenerPosicionEnVecino(GameObject vecino)
     {
-        GameObject vecino = ObtenerVecinoAleatorio(position);
+       
         int indiceAleatorio = Random.Range(0, pointsBateryinRoom[vecino].Length);
         Debug.Log(vecino.name);
         Vector3 nuevoPunto = pointsBateryinRoom[vecino][indiceAleatorio];
@@ -55,29 +59,25 @@ public class SpawnBaterias : MonoBehaviour
         return nuevoPunto;
 
     }
-
+ 
     private GameObject ObtenerHabitacionActual(Vector3 position)
     {
 
-        // Dimensiones de la "caja" alrededor del punto para verificar colisión
-        Vector3 tamañoCaja = new Vector3(0.5f, 1.0f, 0.5f); // Ajusta según tus necesidades
+        Vector3 tamanioCaja = new Vector3(0.5f, 1.0f, 0.5f);
 
-        // Verifica colisión en la posición del personaje usando una caja
-        Collider[] colliders = Physics.OverlapBox(position, tamañoCaja * 0.5f, Quaternion.identity, capasHabitacion);
+        Collider[] colliders = Physics.OverlapBox(position, tamanioCaja * 0.5f, Quaternion.identity, capasHabitacion);
 
         if (colliders.Length > 0)
         {
-            // El personaje está en una habitación (en el área de un BoxCollider)
             foreach (Collider collider in colliders)
             {
-                // Accede a la información de la habitación (el collider)
-                Debug.Log("El personaje está en la habitación: " + collider.gameObject.name);
+                Debug.Log("El personaje esta en la habitacion: " + collider.gameObject.name);
                 return collider.gameObject;
             }
         }
         else
         {
-            Debug.Log("El personaje no está en ninguna habitación.");
+            Debug.Log("El personaje no esta en ninguna habitacion.");
         }
         return null;
     }
@@ -89,6 +89,11 @@ public class SpawnBaterias : MonoBehaviour
 
         Debug.Log("El vecino aleatorio fue " + habitacionVecina);
         return habitacionVecina;
+    }
+
+    private GameObject[] ObtenerVecinos(Vector3 position)
+    {
+        return neigthborgRooms[ObtenerHabitacionActual(position)];
     }
 
 
