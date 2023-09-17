@@ -16,13 +16,14 @@ public class patrullaMuerta : MonoBehaviour
     [SerializeField] float patrolWaitingTime;
     public Transform[] wayPoints;
     int wayPointsIndex;
-
+    [SerializeField] int jugadorAtrapado;
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -66,7 +67,7 @@ public class patrullaMuerta : MonoBehaviour
     public void Patrolling()
     {
         nav.speed = patrolSpeed;
-        nav.stoppingDistance = 1;
+        nav.stoppingDistance = jugadorAtrapado;
 
         if (nav.remainingDistance < nav.stoppingDistance)
         {
