@@ -22,15 +22,15 @@ public class SpawnBaterias : MonoBehaviour
         neigthborgRooms[rooms[7]] = new GameObject[] { rooms[5], rooms[6] };
         neigthborgRooms[rooms[8]] = new GameObject[] { rooms[6] };
 
-        pointsBateryinRoom[rooms[0]] = new Vector3[] { new Vector3(374.100006f, 126.841339f, -151.6669922f), new Vector3(402.200012f, 126.841339f, 88.2000008f), new Vector3(394.100006f, 126.841339f, -401.8999996f) };
-        pointsBateryinRoom[rooms[1]] = new Vector3[] { new Vector3(101, 126.841339f, -18), new Vector3(124, 126.841339f, 101), new Vector3(85, 126.841339f, 194) };
-        pointsBateryinRoom[rooms[2]] = new Vector3[] { new Vector3(14.6000004f, 126.841339f, 148.199997f), new Vector3(-46, 126.841339f, 209.699997f), new Vector3(-143.699997f, 126.841339f, 144.600006f) };
-        pointsBateryinRoom[rooms[3]] = new Vector3[] { new Vector3(-169, 126.841339f, 76), new Vector3(-72, 126.841339f, 57), new Vector3(1, 126.841339f, 67) };
-        pointsBateryinRoom[rooms[4]] = new Vector3[] { new Vector3(-72.5f, 126.841339f, -2.5999999f) };
-        pointsBateryinRoom[rooms[5]] = new Vector3[] { new Vector3(-231, 126.841339f, 213), new Vector3(-233, 126.841339f, -26) };
-        pointsBateryinRoom[rooms[6]] = new Vector3[] { new Vector3(-423, 126.841339f, 70) };
-        pointsBateryinRoom[rooms[7]] = new Vector3[] { new Vector3(-476, 126.841339f, 235.600006f), new Vector3(-298.200012f, 126.841339f, 192.800003f) };
-        pointsBateryinRoom[rooms[8]] = new Vector3[] { new Vector3(-350, 126.841339f, -12) };
+        pointsBateryinRoom[rooms[0]] = new Vector3[] { new Vector3(389.119995f, 20, -143.679993f), new Vector3(389.119995f, 20, -82.5599976f), new Vector3(344.959991f, 20, -106.879997f) };
+        pointsBateryinRoom[rooms[1]] = new Vector3[] { new Vector3(195.519989f, 20, -129.440002f), new Vector3(216f, 20, 17.7600002f), new Vector3(196, 20, 104.799995f) };
+        pointsBateryinRoom[rooms[2]] = new Vector3[] { new Vector3(-50.8799973f, 20, 40.7999992f), new Vector3(128.319992f, 20, 82.2399979f), new Vector3(46.5599976f, 20, 147.199997f) };
+        pointsBateryinRoom[rooms[3]] = new Vector3[] { new Vector3(30.5599976f, 20, -14.8800001f) };
+        pointsBateryinRoom[rooms[4]] = new Vector3[] { new Vector3(17.9200001f, 20, -127.68f) };
+        pointsBateryinRoom[rooms[5]] = new Vector3[] { new Vector3(-136.319992f, 20, -127.68f), new Vector3(-136.319992f, 20, 90.0799942f) };
+        pointsBateryinRoom[rooms[6]] = new Vector3[] { new Vector3(-293.759979f, 20, -22.7200012f) };
+        pointsBateryinRoom[rooms[7]] = new Vector3[] { new Vector3(-204.639999f, 20, 31.3599987f), new Vector3(-328.639984f, 20, 152.160004f) };
+        pointsBateryinRoom[rooms[8]] = new Vector3[] { new Vector3(-252.479996f, 20, -108.479996f) };
     }
 
     private void Update()
@@ -48,6 +48,7 @@ public class SpawnBaterias : MonoBehaviour
     {
         GameObject vecino = ObtenerVecinoAleatorio(position);
         int indiceAleatorio = Random.Range(0, pointsBateryinRoom[vecino].Length);
+        Debug.Log(vecino.name);
         Vector3 nuevoPunto = pointsBateryinRoom[vecino][indiceAleatorio];
 
         Debug.Log(nuevoPunto);

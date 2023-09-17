@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controlTV : MonoBehaviour
+public class ControlTV : MonoBehaviour
 {
     [SerializeField] GameObject sonidoCarne;
     [SerializeField] GameObject sonidoNoticia;
