@@ -17,12 +17,11 @@ public class PuzzlePart : MonoBehaviour
     {
         image.SetActive(true);
         collected = true;
-        GameObject.Find("Recollected").GetComponent<UnityEngine.UI.Image>().overrideSprite = image.GetComponent<UnityEngine.UI.Image>().sprite;
-        GameObject.Find("Recollected").GetComponent<UnityEngine.UI.Image>().enabled = true;
-        GameObject.Find("Recollected").SetActive(true);
+        //GameObject.Find("Recollected").GetComponent<UnityEngine.UI.Image>().overrideSprite = image.GetComponent<UnityEngine.UI.Image>().sprite;
+        //GameObject.Find("Recollected").GetComponent<UnityEngine.UI.Image>().enabled = true;
+        //GameObject.Find("Recollected").SetActive(true);
         GetComponent<MeshRenderer>().enabled = false;
         GameObject.FindObjectOfType<PhotoPuzzleController>().ValidateCollected();
         // ACA VA TODO LO DE FMOD PARA HACER SONAR LA AGARRADA
-
     }
 }
