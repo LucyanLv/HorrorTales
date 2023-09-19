@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{eef4146b-f2cd-49a6-bee6-65af624942a0}">
+		<property name="assetPath">
+			<value>Cinematicas/01. Buho/Escena 01_Buho Silvido.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>15.289342403628117</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{be6c7ab7-c19e-4306-9515-62cc69b6f25a}</destination>
+		</relationship>
+	</object>
+</objects>

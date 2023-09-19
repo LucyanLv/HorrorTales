@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class tutorialScript : MonoBehaviour
 {
-    [Header("Aprender a Caminar")]
     [SerializeField] GameObject aprenderCaminar;
-
-    [Header("Aprender a usar linterna")]
     [SerializeField] GameObject aprenderLinterna;
     [SerializeField] GameObject medidor;
+    [SerializeField] GameObject aprenderLocura;
+    [SerializeField] GameObject aprenderPuerta;
 
     private bool linternaUsada = false;
+    private bool puertaAbierta = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class tutorialScript : MonoBehaviour
         aprenderCaminar.SetActive(true);
         aprenderLinterna.SetActive(false);
         medidor.SetActive(false);
+        aprenderLocura.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,7 +33,11 @@ public class tutorialScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && aprenderLinterna.activeSelf)
         {
-            aprenderLinterna.SetActive(false);
+            Destroy(aprenderLinterna);
+        }
+        if(Input.GetMouseButtonDown(0) && aprenderPuerta.activeSelf)
+        {
+            Destroy(aprenderPuerta);
         }
     }
 
@@ -48,5 +53,26 @@ public class tutorialScript : MonoBehaviour
                 linternaUsada = true; // Marcar que se ha usado la linterna
             }
         }
+
+        if (other.tag == "Bateria")
+        {
+            aprenderLocura.SetActive(true);
+            StartCoroutine(destruirLocura());
+        }
+
+        if(other.tag == "Door" && !puertaAbierta)
+        {
+            aprenderPuerta.SetActive(true);
+            if (Input.GetMouseButtonDown(1))
+            {
+                puertaAbierta = true;
+            }
+        }
+    }
+
+    IEnumerator destruirLocura ()
+    {
+        yield return new WaitForSecondsRealtime (5f);
+        Destroy(aprenderLocura);
     }
 }

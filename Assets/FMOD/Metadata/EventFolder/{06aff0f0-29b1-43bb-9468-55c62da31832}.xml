@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{06aff0f0-29b1-43bb-9468-55c62da31832}">
+		<property name="name">
+			<value>05.PlowPwist</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b9d63902-8312-4847-b950-564ed84d3942}</destination>
+		</relationship>
+	</object>
+</objects>

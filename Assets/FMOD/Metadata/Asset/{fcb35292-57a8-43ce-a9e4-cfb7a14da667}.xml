@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{fcb35292-57a8-43ce-a9e4-cfb7a14da667}">
+		<property name="assetPath">
+			<value>Cinematicas/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{be6c7ab7-c19e-4306-9515-62cc69b6f25a}</destination>
+		</relationship>
+	</object>
+</objects>

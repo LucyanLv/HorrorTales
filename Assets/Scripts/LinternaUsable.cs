@@ -29,6 +29,7 @@ public class LinternaUsable : MonoBehaviour
     [SerializeField] private float tasaAumentoCordura = 10.0f;
     [SerializeField] private float tasaDescensoCordura = 5.0f;
     private float nivelCordura = 0.0f;
+    [SerializeField] float valorProbabilidadControlado = 1;
 
     [Header("Fear")]
     [SerializeField] GameObject fearLevel1;
@@ -52,10 +53,11 @@ public class LinternaUsable : MonoBehaviour
         corduraSlider.onValueChanged.AddListener(ActualizarNivelCordura);
 
         nuevaLinterna.SetActive(false);
+        valorProbabilidadControlado = 1;
     }
     private void ActualizarNivelCordura(float value)
     {
-        float a = 100 - (nivelCordura/2); // Actualizar el valor de la variable basado en el Slider
+        float a = 100 - (nivelCordura/valorProbabilidadControlado); // Actualizar el valor de la variable basado en el Slider
 
         Debug.Log("Locura al actualizar nivel locura");
         fearLevel1.SetActive(a <= 75);
@@ -189,7 +191,7 @@ public class LinternaUsable : MonoBehaviour
             ActualizarSliderBateria();
             // Puedes destruir el objeto de la batería si lo deseas
             //Destroy(other.gameObject);
-            Debug.Log($"aca vamos pal respaun {other.gameObject.name}");
+            Debug.Log($"aca vamos pal respawn {other.gameObject.name}");
         }
     }
 

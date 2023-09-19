@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{0d21624e-8ddb-4455-adbf-70f742e7b4e1}">
+		<property name="assetPath">
+			<value>Cinematicas/02.Baño/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{be6c7ab7-c19e-4306-9515-62cc69b6f25a}</destination>
+		</relationship>
+	</object>
+</objects>

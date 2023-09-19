@@ -443,6 +443,8 @@ MonoBehaviour:
   - Master
   Banks:
   - CharacterSounds
+  - Cinematicas
+  - DialogosPersonaje
   - Music
   - SFX
   BanksToLoad: []

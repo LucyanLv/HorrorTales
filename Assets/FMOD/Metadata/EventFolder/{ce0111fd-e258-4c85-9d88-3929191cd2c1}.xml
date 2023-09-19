@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{ce0111fd-e258-4c85-9d88-3929191cd2c1}">
+		<property name="name">
+			<value>00. Despertar</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b9d63902-8312-4847-b950-564ed84d3942}</destination>
+		</relationship>
+	</object>
+</objects>

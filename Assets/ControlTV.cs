@@ -12,7 +12,7 @@ public class ControlTV : MonoBehaviour
     [SerializeField] GameObject colliderAnimacion;
 
     bool estadoNoticia;
-    int contador = 0;
+    bool clicProcesado; // Bandera para evitar múltiples clics en el mismo frame
 
     private void Start()
     {
@@ -21,19 +21,25 @@ public class ControlTV : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("Acá Entré al collider");
-        if (other.gameObject.CompareTag("Player") && Input.GetMouseButtonUp(0) && estadoNoticia == false)
+        Debug.Log("Acá Entré al collider");
+        if (other.CompareTag("Player") && Input.GetMouseButtonUp(0) && !clicProcesado)
         {
-            NoticiaPrendida();
-            contador++;
-            //Debug.Log("Acá debería prenderse la noticia");
-        }
+            clicProcesado = true; // Marcar el clic como procesado
 
-        else if (other.gameObject.CompareTag("Player") && Input.GetMouseButtonUp(0) && estadoNoticia == true)
-        {
-            NoticiaApagada();
-            //Debug.Log("Acá debería apagarse la noticia");
+            if (estadoNoticia == false)
+            {
+                NoticiaPrendida();
+            }
+            else
+            {
+                NoticiaApagada();
+            }
         }
+    }
+
+    private void LateUpdate()
+    {
+        clicProcesado = false; // Restablecer la bandera al final del frame
     }
 
     public void NoticiaPrendida()
@@ -42,19 +48,17 @@ public class ControlTV : MonoBehaviour
         sonidoCarne.SetActive(false);
         sonidoNoticia.SetActive(true);
         estatica.SetActive(true);
-        if (contador <= 0)
-        {
 
-            colliderAnimacion.SetActive(true);
-            StartCoroutine(aja());
-        }
+        colliderAnimacion.SetActive(true);
+        StartCoroutine(ApagaColliderAnimacion());
     }
 
-    IEnumerator aja()
+    IEnumerator ApagaColliderAnimacion()
     {
         yield return new WaitForSeconds(5f);
         colliderAnimacion.SetActive(false);
     }
+
     public void NoticiaApagada()
     {
         estadoNoticia = false;
