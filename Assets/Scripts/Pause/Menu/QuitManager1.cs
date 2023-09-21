@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuitManager : MonoBehaviour
+public class QuitManager1 : MonoBehaviour
 {
     public void Exit()
     {

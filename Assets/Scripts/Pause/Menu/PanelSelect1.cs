@@ -10,6 +10,5 @@ public class PanelSelect1 : MonoBehaviour
     public void changePanel()
     {
         PanelManager1.panel = panelSelect;
-        Debug.Log(GetComponent<Namespace>());
     }
 }
