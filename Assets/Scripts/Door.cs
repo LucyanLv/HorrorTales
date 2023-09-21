@@ -5,8 +5,8 @@ public class Door : MonoBehaviour
 {
     Animator controller;
     [SerializeField] private int id;
-    [SerializeField] private bool doorOpened = false;
-    [SerializeField] private bool doorLocked;
+    public bool doorOpened = false;
+    public bool doorLocked;
     [SerializeField] private float maxInteractDistance = 3f;
     [SerializeField] private float clickCooldown = 0.5f; // Tiempo de enfriamiento entre clics
     private int clickCount = 0;
