@@ -11,8 +11,9 @@ public class tutorialScript : MonoBehaviour
     [SerializeField] GameObject aprenderLocura;
     [SerializeField] GameObject aprenderPuerta;
 
-    private bool linternaUsada = false;
-    private bool puertaAbierta = false;
+    [SerializeField] private bool linternaUsada = false;
+    [SerializeField] private bool puertaAbierta = false;
+    [SerializeField] private bool tutorialCompletado = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,53 +27,68 @@ public class tutorialScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        if (!tutorialCompletado)
         {
-            Destroy(aprenderCaminar);
-        }
-
-        if (Input.GetMouseButtonDown(1) && aprenderLinterna.activeSelf)
-        {
-            Destroy(aprenderLinterna);
-        }
-        if(Input.GetMouseButtonDown(0) && aprenderPuerta.activeSelf)
-        {
-            Destroy(aprenderPuerta);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "ObjetoLinterna" && !linternaUsada)
-        {
-            aprenderLinterna.SetActive(true);
-            medidor.SetActive(true);
-
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
             {
-                linternaUsada = true; // Marcar que se ha usado la linterna
+                Destroy(aprenderCaminar);
             }
-        }
 
-        if (other.tag == "Bateria")
-        {
-            aprenderLocura.SetActive(true);
-            StartCoroutine(destruirLocura());
-        }
-
-        if(other.tag == "Door" && !puertaAbierta)
-        {
-            aprenderPuerta.SetActive(true);
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && aprenderLinterna.activeSelf)
             {
+                Destroy(aprenderLinterna);
+                linternaUsada = true;
+            }
+
+            if (Input.GetMouseButtonDown(0) && aprenderPuerta.activeSelf)
+            {
+                Destroy(aprenderPuerta);
                 puertaAbierta = true;
             }
         }
     }
 
-    IEnumerator destruirLocura ()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSecondsRealtime (5f);
-        Destroy(aprenderLocura);
+        if (!tutorialCompletado)
+        {
+            if (other.tag == "ObjetoLinterna" && !linternaUsada)
+            {
+                aprenderLinterna.SetActive(true);
+                medidor.SetActive(true);
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    linternaUsada = true;
+                }
+            }
+
+            if (other.tag == "Bateria")
+            {
+                aprenderLocura.SetActive(true);
+                StartCoroutine(DestroyAfterDelay(aprenderLocura, 5f));
+            }
+
+            if (other.tag == "Door" && !puertaAbierta)
+            {
+                aprenderPuerta.SetActive(true);
+                if (Input.GetMouseButtonDown(1))
+                {
+                    puertaAbierta = true;
+                }
+            }
+
+            // Verificar si se ha completado el tutorial
+            if (linternaUsada && puertaAbierta && aprenderCaminar == null && aprenderLinterna == null && aprenderPuerta == null)
+            {
+                tutorialCompletado = true;
+            }
+        }
+    }
+
+    IEnumerator DestroyAfterDelay(GameObject obj, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        Destroy(obj);
     }
 }

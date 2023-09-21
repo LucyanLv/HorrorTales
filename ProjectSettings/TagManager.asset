@@ -11,6 +11,7 @@ TagManager:
   - ObjetoLinterna
   - Bateria
   - Room
+  - Enemigo
   layers:
   - Default
   - TransparentFX

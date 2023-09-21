@@ -12,12 +12,12 @@ public class LinternaUsable : MonoBehaviour
     [Header("LinternaAccion")]
     [SerializeField] GameObject linterna;
     public bool linternaTomada = false;
-    private bool linternaEncendida = false;
+    public bool linternaEncendida = false;
     [SerializeField] GameObject nuevaLinterna;
 
     [Header("Linterna")]
     [SerializeField] private float linternaAgotadaEn = 60.0f;
-    private float nivelBateria = 10.0f;
+    public float nivelBateria = 10.0f; // Cambiar a pública
     public Slider batterySlider;
 
     [Header("RecargaBatería")]
@@ -28,8 +28,8 @@ public class LinternaUsable : MonoBehaviour
     [SerializeField] private Slider corduraSlider;
     [SerializeField] private float tasaAumentoCordura = 10.0f;
     [SerializeField] private float tasaDescensoCordura = 5.0f;
-    private float nivelCordura = 0.0f;
-    [SerializeField] float valorProbabilidadControlado = 1;
+    public float nivelCordura = 0.0f; // Cambiar a pública
+    public float valorProbabilidadControlado = 1;
 
     [Header("Fear")]
     [SerializeField] GameObject fearLevel1;
@@ -55,7 +55,7 @@ public class LinternaUsable : MonoBehaviour
         nuevaLinterna.SetActive(false);
         valorProbabilidadControlado = 1;
     }
-    private void ActualizarNivelCordura(float value)
+    public void ActualizarNivelCordura(float value)
     {
         float a = 100 - (nivelCordura/valorProbabilidadControlado); // Actualizar el valor de la variable basado en el Slider
 
@@ -163,13 +163,13 @@ public class LinternaUsable : MonoBehaviour
 
 
 
-    private void prenderLinterna()
+    public void prenderLinterna()
     {
         linterna.SetActive(true);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Character/Linterna_Prende");
     }
 
-    private void apagarLinterna()
+    public void apagarLinterna()
     {
         linternaEncendida = false;
         linterna.SetActive(false);

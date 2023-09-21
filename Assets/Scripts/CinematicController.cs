@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class CinematicController : MonoBehaviour
 {
@@ -69,7 +70,10 @@ public class CinematicController : MonoBehaviour
                 col3.SetActive(true);
                 break;
             case 5:
+                GameObject a = aims[0];
+                a.SetActive(true);
                 Debug.Log("aca se va a la chingada y ya acabo el juego uwu");
+                SceneManager.LoadScene(0);
                 break;
         }
     }
