@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using static Unity.Burst.Intrinsics.X86;
 
 public class CinematicController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class CinematicController : MonoBehaviour
     private void Awake()
     {
         director = GetComponent<PlayableDirector>();
+        //settings.SaveToFile();
+        settings.LoadDataFromFile();
     }
     private void OnEnable()
     {
