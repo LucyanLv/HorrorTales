@@ -54,6 +54,7 @@ public class tutorialScript : MonoBehaviour
         {
             if (other.tag == "ObjetoLinterna" && !linternaUsada)
             {
+                Debug.Log("Agarró la linterna");
                 aprenderLinterna.SetActive(true);
                 medidor.SetActive(true);
 
