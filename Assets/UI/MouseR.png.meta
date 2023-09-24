@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de012c182d6db234a93f65ea649ae98d
+guid: 1812dac962d26c94b90d7c7d0762e22f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -117,84 +117,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: PauseCanvas_0
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 3393
-        width: 2849
-        height: 610
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d79025745dfe4b4384e85cd0271c27d
-      internalID: 671900282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PauseCanvas_1
-      rect:
-        serializedVersion: 2
-        x: 3043
-        y: 3071
-        width: 942
-        height: 942
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eded5e44078b654090e944314896181
-      internalID: 1901670173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PauseCanvas_2
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 1433
-        width: 2110
-        height: 1894
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8997eae33657bc44a982b03efa79b863
-      internalID: -1509743506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0ef13e359cb44c2499610d305879f6f0
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      PauseCanvas_1: 1901670173
-      PauseCanvas_2: -1509743506
-      PauseCanvas_0: 671900282
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
