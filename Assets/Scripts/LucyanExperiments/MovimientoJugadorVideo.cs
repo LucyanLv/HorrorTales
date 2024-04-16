@@ -66,7 +66,7 @@ public class MovimientoJugadorVideo : MonoBehaviour
         else if (horizontal == 0 && vertical == 0)
         {
             isMoving = false;
-            //animator.SetBool("Moving", isMoving);
+            animator.SetBool("Moving", isMoving);
             rigidbody.velocity = Vector3.zero;
 
             // Detener el evento de pasos
