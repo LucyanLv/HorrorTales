@@ -3,7 +3,22 @@ guid: 3d04fbbde62836f43bdbc03e6e232835
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mecha
+    second: {fileID: 2100000, guid: 3aebd6c994782934092f2fcee683f79a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plato
+    second: {fileID: 2100000, guid: 655cd5f18a368844f89f5a2772937ab8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vela
+    second: {fileID: 2100000, guid: 2d1798e538cef024880dfa41984274cd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

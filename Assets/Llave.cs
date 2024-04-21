@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Llave : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (GameObject.FindWithTag("Player"))
         {

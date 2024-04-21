@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: c0925a37f4336094eaec92932aec75b3
+guid: d11347d9dc7599744b358d2b281108db
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Caf\xE9"
+    second: {fileID: 2100000, guid: f768705750fdf784e854d0a78c7da64d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: fb79a34866ee40245955c4f4ba3f3e5f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
