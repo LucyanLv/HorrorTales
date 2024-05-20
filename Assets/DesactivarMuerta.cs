@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DesactivarMuerta : MonoBehaviour
 {
-    GameObject muerta;
+    public GameObject muerta;
     void Start()
     {
-        muerta.SetActive(true);
+
     }
 
     private void OnTriggerEnter(Collider other)

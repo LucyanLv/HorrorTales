@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        // Restablecer el contador de clics después de un tiempo
+        // Restablecer el contador de clics despuï¿½s de un tiempo
         if (clickCount > 0)
         {
             clickCooldown -= Time.deltaTime;
@@ -34,7 +34,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetMouseButtonDown(0) && clickCount == 0)
+        if (Input.GetMouseButtonDown(0) && clickCount == 0 && other.gameObject.CompareTag("Player"))
         {
             if (doorLocked == true)
             {
@@ -57,7 +57,7 @@ public class Door : MonoBehaviour
             }
             else
             {
-                
+
             }
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,10 @@ public class tutorialScript : MonoBehaviour
     [SerializeField] GameObject aprenderLocura;
     [SerializeField] GameObject aprenderPuerta;
 
-    [SerializeField] private bool linternaUsada = false;
-    [SerializeField] private bool puertaAbierta = false;
-    [SerializeField] private bool tutorialCompletado = false;
+    [SerializeField] bool linternaUsada = false;
+    [SerializeField] bool puertaAbierta = false;
+    [SerializeField] bool tutorialCompletado = false;
+    [SerializeField] bool locuraCompletado = false;
 
     // Start is called before the first frame update
     void Start()
@@ -89,7 +91,7 @@ public class tutorialScript : MonoBehaviour
 
     IEnumerator DestroyAfterDelay(GameObject obj, float delay)
     {
-        yield return new WaitForSecondsRealtime(delay);
+        yield return new WaitForSeconds(delay);
         Destroy(obj);
     }
 }

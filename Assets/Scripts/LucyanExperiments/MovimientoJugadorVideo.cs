@@ -101,10 +101,4 @@ public class MovimientoJugadorVideo : MonoBehaviour
             camera.localEulerAngles = rotation;
         }
     }
-
-    private void OnDestroy()
-    {
-        // Liberar la instancia del evento de pasos al salir del juego o destruir el objeto
-        //footstepEvent.release();
-    }
 }
