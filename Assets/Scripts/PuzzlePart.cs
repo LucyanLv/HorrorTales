@@ -22,6 +22,7 @@ public class PuzzlePart : MonoBehaviour
         //GameObject.Find("Recollected").SetActive(true);
         GetComponent<MeshRenderer>().enabled = false;
         GameObject.FindObjectOfType<PhotoPuzzleController>().ValidateCollected();
+
         // ACA VA TODO LO DE FMOD PARA HACER SONAR LA AGARRADA
     }
 }
