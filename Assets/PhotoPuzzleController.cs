@@ -15,15 +15,15 @@ public class PhotoPuzzleController : MonoBehaviour
     public void ValidateCollected()
     {
         PuzzlePart[] yaRecolectados = parts.Where(obj => obj.Collected).ToArray();
-        foreach (var item in parts)
-        {
-            Debug.Log($"FOTO CON ID {item.Id} TIENE COLECTADO EN {item.Collected}");
-            if (!item.Collected)
-            {
-                allCollected = false;
-                break;
-            }
-        }
+        //foreach (var item in parts)
+        //{
+        //    Debug.Log($"FOTO CON ID {item.Id} TIENE COLECTADO EN {item.Collected}");
+        //    if (!item.Collected)
+        //    {
+        //        allCollected = false;
+        //        break;
+        //    }
+        //}
         allCollected = yaRecolectados.Length == parts.Length;
 
         if (yaRecolectados.Length == 4)

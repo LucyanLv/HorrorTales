@@ -19,15 +19,8 @@ public class KillParticles : MonoBehaviour
     {
         if(player)
         {
-            StartCoroutine(destroyParticles());
+            _particleSystem.loop = false;
+            _particleSystem.startLifetime = 0;
         }
-    }
-
-    IEnumerator destroyParticles()
-    {
-        _particleSystem.GetComponent<Collider>().enabled = false;
-        _particleSystem.Stop();
-        yield return new WaitForSeconds(1);
-        GameObject.Destroy(this.gameObject);
     }
 }
