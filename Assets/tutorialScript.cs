@@ -17,6 +17,8 @@ public class tutorialScript : MonoBehaviour
     [SerializeField] bool tutorialCompletado = false;
     [SerializeField] bool locuraCompletado = false;
 
+    private bool inicializado = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class tutorialScript : MonoBehaviour
         aprenderLinterna.SetActive(false);
         medidor.SetActive(false);
         aprenderLocura.SetActive(false);
+        
+        inicializado = true;
     }
 
     // Update is called once per frame
@@ -86,6 +90,16 @@ public class tutorialScript : MonoBehaviour
             {
                 tutorialCompletado = true;
             }
+        }
+    }
+
+    void OnEnable()
+    {
+        if (!inicializado) return; // Evita que se ejecute al inicio del juego
+
+        if (aprenderLocura != null && aprenderLocura.activeSelf)
+        {
+            StartCoroutine(DestroyAfterDelay(aprenderLocura, 5f));
         }
     }
 

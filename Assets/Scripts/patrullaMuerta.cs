@@ -14,25 +14,56 @@ public class patrullaMuerta : MonoBehaviour
     [SerializeField] float patrolSpeed;
     [SerializeField] float patrolTimer;
     [SerializeField] float patrolWaitingTime;
-    public Transform[] wayPoints;
+
+    public Transform[] wayPointsSectorA;
+    public Transform[] wayPointsSectorB;
+    public Transform[] wayPointsSectorC;
+    public Transform[] wayPointsSectorD;
+
+    private string currentSector;
+
+    private Transform[] wayPoints;
+
     int wayPointsIndex;
-    [SerializeField] int jugadorAtrapado;
+    [SerializeField] int stoppingDistance;
+
+    private LinternaUsable linterna;
+
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
+        linterna = player.GetComponent<LinternaUsable>();
+
+        currentSector = PlayerSectorManager.Instance.currentSector;
+        UpdateWaypointsBySector(currentSector);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerNear)
+        string playerSector = PlayerSectorManager.Instance.currentSector;
+
+        if (playerSector != currentSector)
         {
+            currentSector = playerSector;
+            UpdateWaypointsBySector(currentSector);
+        }
+
+        if (playerNear && linterna.linternaEncendida)
+        {
+            bool luzPrendida = linterna.linternaEncendida;
+            print("Jugador está cerca. ¿Linterna encendida? " + luzPrendida);
+
+            float targetSpeed = luzPrendida ? speedChase * 1.5f : speedChase;
+            nav.speed = Mathf.Lerp(nav.speed, targetSpeed, Time.deltaTime * 2f);
+
+            nav.speed = luzPrendida ? speedChase * 1.5f : speedChase;
             nav.destination = player.transform.position;
-            nav.speed = speedChase;
+
 
             if (nav.velocity == Vector3.zero)
             {
@@ -49,9 +80,12 @@ public class patrullaMuerta : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (linterna.linternaEncendida)
         {
-            playerNear = true;
+            if (other.gameObject.tag == "Player")
+            {
+                playerNear = true;
+            }
         }
     }
 
@@ -67,7 +101,7 @@ public class patrullaMuerta : MonoBehaviour
     public void Patrolling()
     {
         nav.speed = patrolSpeed;
-        nav.stoppingDistance = jugadorAtrapado;
+        nav.stoppingDistance = stoppingDistance;
 
         if (nav.remainingDistance < nav.stoppingDistance)
         {
@@ -83,4 +117,25 @@ public class patrullaMuerta : MonoBehaviour
         }
     }
 
+    private void UpdateWaypointsBySector(string sector)
+    {
+        switch (sector)
+        {
+            case "A":
+                wayPoints = wayPointsSectorA;
+                break;
+            case "B":
+                wayPoints = wayPointsSectorB;
+                break;
+            case "C":
+                wayPoints = wayPointsSectorC;
+                break;
+            case "D":
+                wayPoints = wayPointsSectorD;
+                break;
+            default:
+                Debug.LogWarning("Sector no reconocido: " + sector);
+                break;
+        }
+    }
 }

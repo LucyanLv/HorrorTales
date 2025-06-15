@@ -21,20 +21,22 @@ public class Chase : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            float randomValue = Random.Range(0, 101);
 
-            if (randomValue <= activationProbability)
-            {
-                enemyToActivate.SetActive(true);
-            }
+            enemyToActivate.SetActive(true);
+            //float randomValue = Random.Range(0, 101);
+
+            //if (randomValue <= activationProbability)
+            //{
+
+            //}
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            enemyToActivate.SetActive(false);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        enemyToActivate.SetActive(false);
+    //    }
+    //}
 }
